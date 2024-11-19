@@ -6,8 +6,7 @@ import styled from 'styled-components';
 import { css } from 'styled-components/macro'; //eslint-disable-line
 import { IoCart } from 'react-icons/io5';
 import useAnimatedNavToggler from '../../helpers/useAnimatedNavToggler.js';
-
-import logo from '../../images/logoPersegipanjang-removebg-preview.png';
+import logo from '../../images/TrendEraLogo.png'; //logo trend era
 import { ReactComponent as MenuIcon } from 'feather-icons/dist/icons/menu.svg';
 import { ReactComponent as CloseIcon } from 'feather-icons/dist/icons/x.svg';
 import { useCart } from 'react-use-cart';
