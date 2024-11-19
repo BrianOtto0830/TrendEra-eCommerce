@@ -14,9 +14,9 @@ import ShieldIconImage from 'images/shield-icon.svg';
 import CustomizeIconImage from 'images/customize-icon.svg';
 import { ReactComponent as SvgDecoratorBlob3 } from 'images/svg-decorator-blob-3.svg';
 
-const Heading = tw(SectionHeading)`text-gray-200`; // Light text for contrast
-const Subheading = tw(SubheadingBase)`text-center mb-3 text-gray-400`;
-const Description = tw(SectionDescription)`text-center mx-auto text-gray-400`;
+const Heading = tw(SectionHeading)``; 
+const Subheading = tw(SubheadingBase)`text-center mb-3`;
+const Description = tw(SectionDescription)`text-center mx-auto`;
 const ThreeColumnContainer = styled.div`
   ${tw`mt-10 flex flex-col items-center lg:items-stretch lg:flex-row flex-wrap lg:justify-center max-w-screen-lg mx-auto`}
 `;
@@ -25,24 +25,24 @@ const Column = styled.div`
 `;
 
 const Card = styled.a`
-  ${tw`flex flex-col items-center text-center h-full mx-4 px-4 py-8 rounded transition-transform duration-300 hover:cursor-pointer transform hover:scale-105 bg-gray-800 text-gray-300`}; // Dark card background
+  ${tw`flex flex-col items-center text-center h-full mx-4 px-4 py-8 rounded transition-transform duration-300 hover:cursor-pointer transform hover:scale-105`}; 
   .imageContainer {
-    ${tw`text-center rounded-full p-4 bg-gray-700`}; // Slightly darker background
+    ${tw`text-center rounded-full p-4 bg-gray-100`}; 
     img {
       ${tw`w-8 h-8`};
     }
   }
 
   .title {
-    ${tw`mt-4 font-bold text-xl leading-none text-gray-100`}; // Bold white text
+    ${tw`mt-4 font-bold text-xl leading-none`};
   }
 
   .description {
-    ${tw`mt-4 text-sm font-medium text-gray-400`}; // Lighter gray text
+    ${tw`mt-4 text-sm font-medium text-gray-500`}; 
   }
 
   .link {
-    ${tw`mt-auto inline-flex items-center pt-5 text-sm font-bold text-blue-400 leading-none hocus:text-blue-600 transition duration-300`}; // Bright link color
+    ${tw`mt-auto inline-flex items-center pt-5 text-sm font-bold text-primary-300 leading-none hocus:text-primary-900 transition duration-300`};
     .icon {
       ${tw`ml-2 w-4`};
     }
@@ -50,7 +50,7 @@ const Card = styled.a`
 `;
 
 const DecoratorBlob = styled(SvgDecoratorBlob3)`
-  ${tw`pointer-events-none absolute right-0 bottom-0 w-64 opacity-25 transform translate-x-32 translate-y-40 fill-current text-blue-800`}; // Subtle blob in background
+  ${tw`pointer-events-none absolute right-0 bottom-0 w-64 opacity-25 transform translate-x-32 translate-y-40`};
 `;
 
 export default ({
@@ -93,9 +93,7 @@ export default ({
    * - url: The URL it links to
    */
   return (
-    <Container tw="relative bg-gray-900 py-20">
-      {' '}
-      {/* Dark background for the section */}
+    <Container>
       <ContentWithPaddingXl>
         {subheading && <Subheading>{subheading}</Subheading>}
         {heading && <Heading>{heading}</Heading>}

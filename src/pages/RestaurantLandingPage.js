@@ -10,7 +10,7 @@ import ProductGrid from 'components/cards/TabCardGrid.js';
 import Testimonial from 'components/testimonials/ThreeColumnWithProfileImage.js';
 import DownloadApp from 'components/cta/DownloadApp.js';
 import Footer from 'components/footers/FiveColumnWithInputForm.js';
-import logoPC from '../images/Green And Black Gaming PC YouTube Thumbnail.png';
+import logo from '../images/TrendEraHero.jpg'
 import chefIconImageSrc from 'images/chef-icon.svg';
 import celebrationIconImageSrc from 'images/celebration-icon.svg';
 import shopIconImageSrc from 'images/shop-icon.svg';
@@ -32,7 +32,7 @@ export default () => {
       <Hero
         heading={
           <>
-            Explore the Latest Trend Collection at{' '}
+            Explore the Latest Trend Collection at {' '}
             <HighlightedText>Trend Era</HighlightedText>
           </>
         }
@@ -42,7 +42,7 @@ export default () => {
             Providing clothes, bags and hats for your modern lifestyle.
           </Subheading>
         }
-        imageSrc={logoPC}
+        imageSrc={logo}
         imageCss={imageCss}
         imageDecoratorBlob={true}
         primaryButtonText="Shop Now"

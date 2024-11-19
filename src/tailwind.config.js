@@ -17,15 +17,15 @@ module.exports = {
       white: '#fff',
 
       primary: {
-        100: '#a273ff',
-        200: '#935bff',
-        300: '#8344ff',
-        400: '#742cff',
-        500: '#6415FF',
-        600: '#5a13e6',
-        700: '#5011cc',
-        800: '#460fb3',
-        900: '#3c0d99',
+        100: '#f5f5f5', // Abu-abu sangat terang
+        200: '#e5e5e5', // Abu-abu terang
+        300: '#d4d4d4', // Abu-abu sedikit lebih gelap
+        400: '#a3a3a3', // Abu-abu netral
+        500: '#737373', // Abu-abu medium
+        600: '#525252', // Abu-abu medium gelap
+        700: '#404040', // Abu-abu gelap
+        800: '#262626', // Abu-abu sangat gelap
+        900: '#171717', // Hitam keabu-abuan
       },
 
       secondary: {

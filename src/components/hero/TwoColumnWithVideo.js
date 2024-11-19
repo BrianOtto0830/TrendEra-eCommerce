@@ -15,13 +15,13 @@ import { ReactComponent as SvgDecoratorBlob1 } from '../../images/svg-decorator-
 import { ReactComponent as SvgDecoratorBlob2 } from '../../images/dot-pattern.svg';
 import DesignIllustration from '../../images/design-illustration.svg';
 
-const Container = tw.div`relative bg-gray-900 text-gray-200`; // Dark background for techy look
+const Container = tw.div`relative`; 
 const TwoColumn = tw.div`flex flex-col lg:flex-row md:items-center max-w-screen-xl mx-auto py-20 md:py-24`;
 const LeftColumn = tw.div`relative lg:w-6/12 lg:pr-12 flex-shrink-0 text-center lg:text-left`;
 const RightColumn = tw.div`relative mt-12 lg:mt-0 flex flex-col justify-center`;
 
-const Heading = tw.h1`font-black text-3xl md:text-5xl leading-snug max-w-3xl text-white`;
-const Paragraph = tw.p`my-5 lg:my-8 text-sm lg:text-base font-medium text-gray-400 max-w-lg mx-auto lg:mx-0`;
+const Heading = tw.h1`font-black text-3xl md:text-5xl leading-snug max-w-3xl`;
+const Paragraph = tw.p`my-5 lg:my-8 text-sm lg:text-base font-medium text-gray-600 max-w-lg mx-auto lg:mx-0`;
 
 const Actions = tw.div`flex flex-col items-center sm:flex-row justify-center lg:justify-start mt-8`;
 
@@ -35,7 +35,7 @@ const PrimaryButton = styled.button`
 
 // Watch video button styled with icon and hover effect
 const WatchVideoButton = styled.button`
-  ${tw`mt-4 sm:mt-0 sm:ml-8 flex items-center text-gray-400 transition duration-300 hover:text-blue-400 focus:outline-none`}
+  ${tw`mt-4 sm:mt-0 sm:ml-8 flex items-center text-gray-600 transition duration-300 hover:text-blue-400 focus:outline-none`}
   .playIcon {
     ${tw`stroke-1 w-12 h-12 text-blue-500`}
   }
