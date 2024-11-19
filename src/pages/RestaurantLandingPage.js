@@ -32,22 +32,21 @@ export default () => {
       <Hero
         heading={
           <>
-            Dapatkan Komputer Terbaik di{' '}
-            <HighlightedText>AR.COM Techno Industry.</HighlightedText>
+            Explore the Latest Trend Collection at{' '}
+            <HighlightedText>Trend Era</HighlightedText>
           </>
         }
         description={
           <Subheading>
             {' '}
-            Temukan berbagai pilihan komputer, aksesoris, dan perangkat terbaru
-            dengan harga terjangkau.
+            Providing clothes, bags and hats for your modern lifestyle.
           </Subheading>
         }
         imageSrc={logoPC}
         imageCss={imageCss}
         imageDecoratorBlob={true}
-        primaryButtonText="Belanja Sekarang"
-        watchVideoButtonText="Lihat Produk Kami"
+        primaryButtonText="Shop Now"
+        watchVideoButtonText="View Collection"
       />
       <Features />
       <MainFeature2 />
@@ -56,10 +55,9 @@ export default () => {
       <DownloadApp
         text={
           <>
-            Temukan produk terbaik kami di{' '}
-            <HighlightedTextInverse>Shopee</HighlightedTextInverse> dan{' '}
-            <HighlightedTextInverse>Tokopedia</HighlightedTextInverse>. dan
-            dapatkan penawaran menarik!
+            Temukan kami di{' '}
+            <HighlightedTextInverse>Shopee</HighlightedTextInverse> and{' '}
+            <HighlightedTextInverse>Tokopedia</HighlightedTextInverse> for exclusive discounts!
           </>
         }
       />

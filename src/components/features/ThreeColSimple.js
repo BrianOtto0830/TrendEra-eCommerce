@@ -57,23 +57,23 @@ export default ({
   cards = [
     {
       imageSrc: ShieldIconImage,
-      title: 'Aman',
+      title: 'Convenient Products',
       description:
-        'Kami memastikan semua produk kami berasal dari merek terpercaya dengan standar keamanan tertinggi.',
+        'We design all our clothing with high-quality materials for your comfort throughout the day.',
       url: 'https://timerse.com',
     },
     {
       imageSrc: SupportIconImage,
-      title: 'Dukungan 24/7',
+      title: '24/7 Support',
       description:
-        'Tim kami tersedia 24 jam sehari untuk membantu dengan masalah teknis atau pertanyaan apa pun.',
+        'We are always ready to assist you with any questions or concerns about the products you have purchased, at any time.',
       url: 'https://google.com',
     },
     {
       imageSrc: CustomizeIconImage,
-      title: 'Dapat Disesuaikan',
+      title: 'Design to Your Needs',
       description:
-        'Kami menawarkan berbagai PC rakitan dan komponen yang dapat disesuaikan sesuai kebutuhan Anda.',
+        'We offer a wide range of clothing and accessories that are designed to suit your specific needs and preferences.',
       url: 'https://reddit.com',
     },
   ],
