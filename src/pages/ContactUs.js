@@ -20,80 +20,80 @@ export default () => {
       <ContactDetails
         cards={[
           {
-            title: "New York",
+            title: "Jakarta, Indonesia",
             description: (
               <>
                 <Address>
-                  <AddressLine>40 Gates Court</AddressLine>
-                  <AddressLine>Endicott, NY 13760</AddressLine>
+                  <AddressLine>Jl. Raya Jakarta No. 40</AddressLine>
+                  <AddressLine>Jakarta Selatan, DKI Jakarta 12150</AddressLine>
                 </Address>
-                <Email>contact@treact.com</Email>
-                <Phone>+1 (203) 991-6988</Phone>
+                <Email>contact@trendera.com</Email>
+                <Phone>+62 21 1234 5678</Phone>
               </>
             )
           },
           {
-            title: "Illinois",
+            title: "Singapore",
             description: (
               <>
                 <Address>
-                  <AddressLine>602 Annadale Drive</AddressLine>
-                  <AddressLine>Dekalb, IL 60115</AddressLine>
+                  <AddressLine>10 Anson Road</AddressLine>
+                  <AddressLine>Singapore 079903</AddressLine>
                 </Address>
-                <Email>contact@treact.com</Email>
-                <Phone>+1 (203) 991-6988</Phone>
+                <Email>contact@trendera.com</Email>
+                <Phone>+65 6767 1234</Phone>
               </>
             )
           },
           {
-            title: "California",
+            title: "Kuala Lumpur, Malaysia",
             description: (
               <>
                 <Address>
-                  <AddressLine>96 NE. Delaware Lane</AddressLine>
-                  <AddressLine>Sacramento, CA 95820</AddressLine>
+                  <AddressLine>Level 3, Menara KL</AddressLine>
+                  <AddressLine>Kuala Lumpur, 50450</AddressLine>
                 </Address>
-                <Email>contact@treact.com</Email>
-                <Phone>+1 (203) 991-6988</Phone>
+                <Email>contact@trendera.com</Email>
+                <Phone>+60 3 1234 5678</Phone>
               </>
             )
           },
           {
-            title: "Tennessee",
+            title: "Bangkok, Thailand",
             description: (
               <>
                 <Address>
-                  <AddressLine>74 Peachtree Ave.</AddressLine>
-                  <AddressLine>Dyersburg, TN 38024</AddressLine>
+                  <AddressLine>15 Sukhumvit Rd.</AddressLine>
+                  <AddressLine>Bangkok, 10110</AddressLine>
                 </Address>
-                <Email>contact@treact.com</Email>
-                <Phone>+1 (203) 991-6988</Phone>
+                <Email>contact@trendera.com</Email>
+                <Phone>+66 2 1234 5678</Phone>
               </>
             )
           },
           {
-            title: "New Jersey",
+            title: "Manila, Philippines",
             description: (
               <>
                 <Address>
-                  <AddressLine>8355 Summer Street</AddressLine>
-                  <AddressLine>Manchester, NJ 08759</AddressLine>
+                  <AddressLine>101 Bonifacio Global City</AddressLine>
+                  <AddressLine>Taguig, Metro Manila</AddressLine>
                 </Address>
-                <Email>contact@treact.com</Email>
-                <Phone>+1 (203) 991-6988</Phone>
+                <Email>contact@trendera.com</Email>
+                <Phone>+63 2 1234 5678</Phone>
               </>
             )
           },
           {
-            title: "Ohio",
+            title: "Seoul, South Korea",
             description: (
               <>
                 <Address>
-                  <AddressLine>7713 Snake Hill Ave.</AddressLine>
-                  <AddressLine>Piqua, OH 45356</AddressLine>
+                  <AddressLine>123 Gangnam District</AddressLine>
+                  <AddressLine>Seoul, 06155</AddressLine>
                 </Address>
-                <Email>contact@treact.com</Email>
-                <Phone>+1 (203) 991-6988</Phone>
+                <Email>contact@trendera.com</Email>
+                <Phone>+82 2 1234 5678</Phone>
               </>
             )
           }
