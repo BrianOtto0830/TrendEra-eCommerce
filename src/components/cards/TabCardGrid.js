@@ -51,7 +51,7 @@ const Card = tw(
 
 const CardButton = tw(
   PrimaryButtonBase
-)`text-sm cursor-pointer absolute bottom-0 left-0 right-0 mx-auto bg-red-500 hover:bg-green-200`;
+)`text-sm cursor-pointer absolute bottom-0 left-0 right-0 mx-auto bg-green-400 hover:bg-green-200`;
 const CardImageContainer = styled.div`
   ${(props) =>
     css`
@@ -87,9 +87,9 @@ export default ({ heading = 'Checkout our Products' }) => {
   const [quantity, setQuantity] = useState(1);
   const [tabsKeys, setTabsKeys] = useState([
     'Best Sellers',
-    'PC Rakitan',
-    'Laptop',
-    'Gaming Acc',
+    'Dress',
+    'Pants',
+    'T-Shirt',
   ]);
   const [activeTab, setActiveTab] = useState('Best Sellers');
   const { addItem, updateItemQuantity, items } = useCart();
@@ -100,12 +100,14 @@ export default ({ heading = 'Checkout our Products' }) => {
     'Best Sellers': products
       .sort((a, b) => b.stars - a.stars) // Sort by stars in descending order
       .slice(0, 8), // Get the top 8 items
-    'PC Rakitan': products.filter(
-      (product) => product.category === 'PC Rakitan'
+    'Dress': products.filter(
+      (product) => product.category === 'Dress'
     ),
-    Laptop: products.filter((product) => product.category === 'Laptop'),
-    'Gaming Acc': products.filter(
-      (product) => product.category === 'Gaming Acc'
+    "Pants": products.filter(
+      (product) => product.category === 'Pants'
+    ),
+    'T-Shirt': products.filter(
+      (product) => product.category === 'T-Shirt'
     ),
   };
 

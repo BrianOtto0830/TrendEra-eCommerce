@@ -17,7 +17,7 @@ import shopIconImageSrc from 'images/shop-icon.svg';
 
 export default () => {
   const Subheading = tw.span`tracking-wider text-sm font-medium`;
-  const HighlightedText = tw.span`bg-green-800 text-gray-100 px-4 transform -skew-x-12 inline-block`;
+  const HighlightedText = tw.span`bg-gray-400 text-gray-100 px-4 transform -skew-x-12 inline-block`;
   const HighlightedText2 = tw.span`bg-red-800 text-gray-100 px-4 transform -skew-x-12 inline-block`;
   const HighlightedTextInverse = tw.span`bg-gray-100 text-primary-500 px-4 transform -skew-x-12 inline-block`;
   const Description = tw.span`inline-block mt-8`;
@@ -48,9 +48,9 @@ export default () => {
         primaryButtonText="Shop Now"
         watchVideoButtonText="View Collection"
       />
-      <Features />
-      <MainFeature2 />
       <ProductGrid />
+      <MainFeature2 />
+      <Features />
 
       <DownloadApp
         text={

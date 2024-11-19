@@ -27,7 +27,7 @@ const Actions = tw.div`flex flex-col items-center sm:flex-row justify-center lg:
 
 // Primary Button with hover effect and techy style
 const PrimaryButton = styled.button`
-  ${tw`font-bold px-8 lg:px-10 py-3 rounded bg-blue-500 text-gray-900 hover:bg-blue-700 focus:shadow-outline focus:outline-none transition duration-300`}
+  ${tw`font-bold px-8 lg:px-10 py-3 rounded bg-green-500 text-gray-900 hover:bg-blue-700 focus:shadow-outline focus:outline-none transition duration-300`}
   &:hover {
     box-shadow: 0 8px 24px rgba(0, 153, 255, 0.6);
   }
