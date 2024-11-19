@@ -44,11 +44,11 @@ export default ({
   subheading = "Our Expertise",
   heading = (
     <>
-      Designed & Developed by <span tw="text-primary-500">Professionals.</span>
+      Curated & Crafted by <span tw="text-primary-500">Fashion Experts.</span>
     </>
   ),
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  primaryButtonText = "Learn More",
+  description = "At Trend Era, our team of fashion professionals designs and curates every collection to ensure the highest quality and style. We blend the latest trends with timeless fashion to bring you pieces that stand out.",
+  primaryButtonText = "Discover Our Collection",
   primaryButtonUrl = "https://timerse.com",
   imageSrc = TeamIllustrationSrc,
   buttonRounded = true,
