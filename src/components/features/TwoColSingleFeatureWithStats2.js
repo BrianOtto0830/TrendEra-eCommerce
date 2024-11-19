@@ -7,7 +7,7 @@ import {
   Subheading as SubheadingBase,
 } from 'components/misc/Headings.js';
 import { PrimaryButton as PrimaryButtonBase } from 'components/misc/Buttons.js';
-import StatsIllustrationSrc from 'images/ourstory.jpg'; // Replace with a techy image
+import StatsIllustrationSrc from 'images/ourProduct.jpg'; // Replace with my image
 import { ReactComponent as SvgDotPattern } from 'images/dot-pattern.svg'; // Can replace this with a circuit pattern SVG
 
 // Styled Components with tech-themed design adjustments
@@ -59,14 +59,14 @@ const DecoratorBlob = styled(SvgDotPattern)((props) => [
 ]);
 
 export default ({
-  subheading = 'Our Performance',
+  subheading = 'Trend Era Insights',
   heading = (
     <>
-      We've been doing this <wbr /> since <span>2020.</span>
+      Elevating Style <wbr /> for the <span>Modern Era.</span>
     </>
   ),
-  description = 'Serving our clients with high-quality tech products and support since 2020. From assembling PCs to technical assistance, we’re always here to deliver the best.',
-  primaryButtonText = 'Discover More',
+  description = 'Explore the latest trends in fashion with Trend Era. From elegant outfits to modern accessories, discover the essence of style with us.',
+  primaryButtonText = 'Shop Now',
   primaryButtonUrl = 'https://timerse.com',
   imageSrc = StatsIllustrationSrc,
   imageCss = null,
@@ -79,16 +79,16 @@ export default ({
 }) => {
   const defaultStatistics = [
     {
-      key: 'Happy Clients',
-      value: '500+',
+      key: 'Satisfied Customers',
+      value: '10K+',
     },
     {
-      key: 'Completed Projects',
-      value: '1200+',
+      key: 'Products Available',
+      value: '5K+',
     },
     {
-      key: 'Awards Won',
-      value: '15+',
+      key: 'Global Reach',
+      value: '50+ Countries',
     },
   ];
 

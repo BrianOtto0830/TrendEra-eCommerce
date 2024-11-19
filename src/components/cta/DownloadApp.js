@@ -49,13 +49,13 @@ const DecoratorBlob2 = tw(
   SvgDecoratorBlob1
 )`absolute top-0 right-0 w-80 h-80 transform  translate-x-20 -translate-y-64 text-gray-800 opacity-50`;
 export default ({
-  subheading = 'Kunjungi Lapak Online kami',
+  subheading = 'Download Application',
   text = 'Developers all over the world are happily using Treact.',
   link1Text = 'Toko Pedia',
-  link1Url = 'http://apple.com',
+  link1Url = 'https://www.tokopedia.com/',
   link1IconSrc = appleIconImageSrc,
   link2Text = 'Shopee',
-  link2Url = 'http://play.google.com',
+  link2Url = 'https://shopee.co.id/',
   link2IconSrc = googlePlayIconImageSrc,
   pushDownFooter = false,
   imageSrc = mockupImageSrc,

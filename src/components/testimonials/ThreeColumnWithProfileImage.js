@@ -31,21 +31,21 @@ export default ({
   testimonials = [
     {
       imageSrc:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3.25&w=512&h=512&q=80',
-      quote: 'Keren rakit 10jt Bisa maen WUKONG 4k 60 fps',
-      customerName: 'Charlotte Hale',
+        'https://i.pinimg.com/736x/2d/3f/aa/2d3faaec52fbda21fcdf790f8d3cbcbb.jpg',
+      quote: 'The product quality is amazing! It’s so comfortable and stylish. My order arrived quickly too.',
+      customerName: 'Jessica Lee',
     },
     {
       imageSrc:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3.25&w=512&h=512&q=80',
-      quote: 'Seller terpercaya, barang aman sampai tujuan',
-      customerName: 'Charlotte Hale',
+        'https://i.pinimg.com/736x/2a/31/de/2a31de108bf780d3219add7b45687804.jpg',
+      quote: 'I love the trendy designs! The bag I ordered is exactly as pictured and very durable.',
+      customerName: 'Emily Carter',
     },
     {
       imageSrc:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3.25&w=512&h=512&q=80',
-      quote: 'Barangnya sampai dengan mulus',
-      customerName: 'Charlotte Hale',
+        'https://i.pinimg.com/736x/20/04/14/20041499ff62d4806f1e6dbf8ac3e144.jpg',
+      quote: 'Shopping here is so convenient. Great customer service and fast delivery!',
+      customerName: 'Michael Brown',
     },
   ],
 }) => {

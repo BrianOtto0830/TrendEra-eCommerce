@@ -55,7 +55,7 @@ export default () => {
       <DownloadApp
         text={
           <>
-            Temukan kami di{' '}
+            Download the app on{' '}
             <HighlightedTextInverse>Shopee</HighlightedTextInverse> and{' '}
             <HighlightedTextInverse>Tokopedia</HighlightedTextInverse> for exclusive discounts!
           </>
