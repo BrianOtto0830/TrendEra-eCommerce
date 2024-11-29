@@ -16,10 +16,10 @@ export const ProductsProvider = ({ children }) => {
       );
 
       // Memotong array hasil response menjadi 14 data
-      const limitedData = response.data.slice(0, 14);
-
+      // const limitedData = response.data.slice(0, 14);
+      console.log("response", response.data.data);
       // Menetapkan data yang telah dipotong ke state
-      setProducts(data);
+      setProducts(response.data.data);
     } catch (err) {
       console.log(err);
     }
@@ -28,7 +28,7 @@ export const ProductsProvider = ({ children }) => {
   const getProductById = async (id) => {
     try {
       const response = await axios.get(
-        `https://65cc9d71dd519126b83f161f.mockapi.io/api/v1/products/${id}`
+        `http://localhost:3001/api/product/${id}`
       );
 
       // Memotong array hasil response menjadi 14 data

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useFilterContext } from "../context/filter_context";
 import { getUniqueValues, formatPrice } from "../helpers/helpers";
 import { FaCheck } from "react-icons/fa";
+import axios from "axios";
+
+
 
 const Filters = () => {
   const {
@@ -21,9 +24,30 @@ const Filters = () => {
     clearFilters,
   } = useFilterContext();
 
-  const categories = getUniqueValues(all_products, "category");
+  const user = JSON.parse(localStorage.getItem("user"));
+  const [categories, setCategories] = React.useState([]);
   const companies = getUniqueValues(all_products, "company");
   const colors = getUniqueValues(all_products, "colors");
+
+  const getCategories = async () => {
+    try{
+      const response = await axios.get('http://localhost:3001/api/category',
+        {
+          headers: {
+            Authorization: `${user.token}`,
+          },
+        }
+        
+      );
+      const category = response.data.map((item) => item.name)
+      setCategories(["all", ...category]);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  useEffect(() => {
+    getCategories();
+  }, []);
 
   console.log("categories", categories);
   return (

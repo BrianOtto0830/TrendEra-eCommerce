@@ -93,21 +93,21 @@ export default ({ heading = 'Checkout our Products' }) => {
   ]);
   const [activeTab, setActiveTab] = useState('Best Sellers');
   const { addItem, updateItemQuantity, items } = useCart();
-  // const { products } = useProductsContext();
-  const products = data;
+  const { products, getProductById, product } = useProductsContext();
+  // const products = data;
 
   const tabs = {
     'Best Sellers': products
-      .sort((a, b) => b.stars - a.stars) // Sort by stars in descending order
+      // .sort((a, b) => b.stars - a.stars) // Sort by stars in descending order
       .slice(0, 8), // Get the top 8 items
     'Dress': products.filter(
-      (product) => product.category === 'Dress'
+      (product) => product.category.name === 'Dress'
     ),
     "Pants": products.filter(
-      (product) => product.category === 'Pants'
+      (product) => product.category.name === 'Pants'
     ),
     'T-Shirt': products.filter(
-      (product) => product.category === 'T-Shirt'
+      (product) => product.category.name === 'T-Shirt'
     ),
   };
 
@@ -208,7 +208,7 @@ export default ({ heading = 'Checkout our Products' }) => {
                 >
                   <Link to={`/detail-product/${card.id}`}>
                     <CardImageContainer
-                      image={card.imageSrc}
+                      image={`https://qhsdnskiusrydliavrxp.supabase.co/storage/v1/object/public/images/${card.images[0]}`}
                       className="flex items-center justify-center"
                     />
                   </Link>

@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/auth/login`,
+        `http://localhost:3001/api/auth/customer`,
         dataUser
       );
 
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
 
       navigation(redirectPath, { replace: true });
       localStorage.setItem("user", JSON.stringify(user));
-      alert("Login Berhasil, Selamat Datang Admin");
+      alert("Login Berhasil, Selamat Datang di Trend Era");
       navigation("/");
       setUser(user);
     } catch (error) {
