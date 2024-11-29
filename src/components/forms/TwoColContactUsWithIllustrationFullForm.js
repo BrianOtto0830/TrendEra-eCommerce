@@ -36,7 +36,7 @@ const SubmitButton = tw(PrimaryButtonBase)`inline-block mt-8`
 export default ({
   subheading = "Contact Us",
   heading = <>Feel free to <span tw="text-primary-500">get in touch</span><wbr/> with us.</>,
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  description = "At Trend Era, we’re committed to providing exceptional service. Whether you have questions, feedback, or need assistance, we’re here to help. Reach out to us and we’ll get back to you as soon as possible.",
   submitButtonText = "Send",
   formAction = "#",
   formMethod = "get",

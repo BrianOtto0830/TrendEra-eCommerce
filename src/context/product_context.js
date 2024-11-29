@@ -8,8 +8,11 @@ export const ProductsProvider = ({ children }) => {
   const [product, setProduct] = useState([]);
   const fetchProducts = async () => {
     try {
+      // const response = await axios.get(
+      //   'https://65cc9d71dd519126b83f161f.mockapi.io/api/v1/products'
+      // );
       const response = await axios.get(
-        'https://65cc9d71dd519126b83f161f.mockapi.io/api/v1/products'
+        'http://localhost:3001/api/product'
       );
 
       // Memotong array hasil response menjadi 14 data
