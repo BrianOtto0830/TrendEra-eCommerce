@@ -5,6 +5,8 @@ import { css } from 'styled-components/macro'; //eslint-disable-line
 import { PrimaryButton as PrimaryButtonBase } from 'components/misc/Buttons.js';
 
 import LogoImage from 'images/logo.svg';
+import SimpleLogoTE from 'images/T.png';
+import SimpleLogoTEdark from 'images/Tdark.png';
 import { ReactComponent as FacebookIcon } from 'images/facebook-icon.svg';
 import { ReactComponent as TwitterIcon } from 'images/twitter-icon.svg';
 import { ReactComponent as YoutubeIcon } from 'images/youtube-icon.svg';
@@ -35,7 +37,7 @@ const Divider = tw.div`my-16 border-b-2 border-gray-300 w-full`;
 
 const ThreeColRow = tw.div`flex flex-col md:flex-row items-center justify-between`;
 
-const LogoContainer = tw.div`flex items-center justify-center md:justify-start`;
+const LogoContainer = tw.div`flex items-center justify-center md:justify-start border-2 border-black border-opacity-25`;
 const LogoImg = tw.img`w-8`;
 const LogoText = tw.h5`ml-2 text-xl font-black tracking-wider text-gray-800`;
 
@@ -91,11 +93,11 @@ export default ({ background }) => {
         <Divider />
         <ThreeColRow>
           <LogoContainer>
-            <LogoImg src={LogoImage} />
-            <LogoText>Treact Inc.</LogoText>
+            <LogoImg src={SimpleLogoTEdark} />
+            <LogoText>Trend Era</LogoText>
           </LogoContainer>
           <CopywrightNotice>
-            &copy; 2018 Treact Inc. All Rights Reserved.
+            &copy; 2018 Trend Era. All Rights Reserved.
           </CopywrightNotice>
           <SocialLinksContainer>
             <SocialLink href="https://facebook.com">
