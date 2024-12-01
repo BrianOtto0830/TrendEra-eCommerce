@@ -90,20 +90,20 @@ const filter_reducer = (state, action) => {
         (product) => product.company === company
       );
     }
-    // if (color !== 'all') {
-    //   tempProducts = tempProducts.filter((product) =>
-    //     product.colors.find((c) => c === color)
-    //   );
-    // }
-    if (color === "all") {
-      // Mengambil semua warna unik dari produk
-      const allColors = [...new Set(tempProducts.flatMap((product) => product.colors))];
-      console.log("Available colors:", allColors);
-    } else {
+    if (color !== 'all') {
       tempProducts = tempProducts.filter((product) =>
-        product.colors.includes(color)
+        product.colors.find((c) => c.color === color)
       );
     }
+    // if (color === "all") {
+    //   // Mengambil semua warna unik dari produk
+    //   const allColors = [...new Set(tempProducts.flatMap((product) => product.colors))];
+    //   console.log("Available colors:", allColors);
+    // } else {
+    //   tempProducts = tempProducts.filter((product) =>
+    //     product.colors.includes(color)
+    //   );
+    // }
 
     tempProducts = tempProducts.filter((product) => product.price <= price);
 

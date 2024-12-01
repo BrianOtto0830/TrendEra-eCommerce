@@ -28,6 +28,8 @@ const Filters = () => {
   const [categories, setCategories] = React.useState([]);
   const companies = getUniqueValues(all_products, "company");
   const colors = getUniqueValues(all_products, "colors");
+  // const colors = [...new Set(all_products.flatMap(product => product.colors))];
+  // const uniqueColors = ["all", ...colors];
 
   const getCategories = async () => {
     try{
@@ -113,6 +115,7 @@ const Filters = () => {
             <h5>colors</h5>
             <div className="colors">
               {colors.map((c, index) => {
+                console.log("ini c tuh apa ya: ", c);
                 if (c === "all") {
                   return (
                     <button
@@ -128,18 +131,18 @@ const Filters = () => {
                     </button>
                   );
                 }
-                return (
+                return ( 
                   <button
                     key={index}
                     name="color"
-                    style={{ background: c }}
+                    style={{ background: c.color }}
                     className={`${
                       color === c ? "color-btn active" : "color-btn"
                     }`}
-                    data-color={c}
+                    data-color={c.color}
                     onClick={updateFilters}
                   >
-                    {color === c ? <FaCheck /> : null}
+                    {color === c.color ? <FaCheck /> : null}
                   </button>
                 );
               })}
