@@ -31,7 +31,7 @@ const Filters = () => {
 
   const getCategories = async () => {
     try{
-      const response = await axios.get('http://localhost:3001/api/category',
+      const response = await axios.get('http://localhost:3001/api/categories',
         {
           headers: {
             Authorization: `${user.token}`,
@@ -39,7 +39,7 @@ const Filters = () => {
         }
         
       );
-      const category = response.data.map((item) => item.name)
+      const category = response.data.data.map((item) => item.name)
       setCategories(["all", ...category]);
     } catch (error) {
       console.log(error);

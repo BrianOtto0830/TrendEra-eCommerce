@@ -82,7 +82,7 @@ const filter_reducer = (state, action) => {
     }
     if (category !== "all") {
       tempProducts = tempProducts.filter(
-        (product) => product.category === category
+        (product) => product.category.name === category
       );
     }
     if (company !== "all") {
@@ -93,6 +93,7 @@ const filter_reducer = (state, action) => {
     if (color !== "all") {
       tempProducts = tempProducts.filter((product) =>
         product.colors.find((c) => c === color)
+        // product.colors.includes(color)
       );
     }
 
