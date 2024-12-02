@@ -60,6 +60,7 @@ const DetailProduct = () => {
     //   // Lengkapi code berikut
     //   addItem(selectedItem, quantity);
     //   toast.success(`${selectedItem.item.name} add to cart`);
+    //   addItem({...selectedItem, maxQuantity: maxQuantity}, quantity);
     //   setShowModal(false);
     // } else {
     //   toast.error(`Sorry stock avaible ${selectedItem.stock} only`);
@@ -74,13 +75,16 @@ const DetailProduct = () => {
         toast.error('Quantity exceeds available stock.');
       } else {
         // Jika tidak melebihi stok dan validasi warna lolos, tambahkan ke cart
-        addItem(selectedItem, quantity);
+        addItem({...selectedItem, maxQuantity: maxQuantity}, quantity);
         toast.success(`${selectedItem.name} added to cart`);
         setShowModal(false);
       }
     } else {
       toast.error(`Sorry, product is unavailable.`);
     }
+    // cari itemnya udah ada atau belum di cart, kalau ada tambahkan quantitiy yang ada di keranjang dan quantity yang akan masuk ke kerajang
+    // jika hasilnya lebih besar dari max quantity di keranjang maka tampilkan error
+    // jika mau cari quantity sisa maka total - maxQuantity
   };
 
   useEffect(() => {
@@ -190,24 +194,27 @@ const DetailProduct = () => {
                   {Array.isArray(product.colors) && (
                     <div className="flex space-x-2">
                       {product.colors.map((color, index) => (
-                        <div
-                          key={index}
-                          className={`relative w-8 h-8 rounded-full cursor-pointer border-2 ${
-                            selectedColor === color.color
-                              ? 'border-red-500'
-                              : 'border-transparent'
-                          }`}
-                          style={{ backgroundColor: color.color }}
-                          onClick={() => {handleColorClick(color.color);
-                            setMaxQuantity(color.quantity);
-                          }}
-                        >
-                          {selectedColor === color.color && (
-                            <FaCheck
-                              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white"
-                              size={16}
-                            />
-                          )}
+                        <div>
+                          <div
+                            key={index}
+                            className={`relative w-8 h-8 rounded-full cursor-pointer border-2 ${
+                              selectedColor === color.color
+                                ? 'border-red-500'
+                                : 'border-transparent'
+                            }`}
+                            style={{ backgroundColor: color.color }}
+                            onClick={() => {handleColorClick(color.color);
+                              setMaxQuantity(color.quantity);
+                            }}
+                          >
+                            {selectedColor === color.color && (
+                              <FaCheck
+                                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white"
+                                size={16}
+                              />
+                            )}
+                          </div>
+                        <p>text</p>
                         </div>
                       ))}
                     </div>

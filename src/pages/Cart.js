@@ -16,8 +16,12 @@ const Cart = () => {
   const Container = tw.div`relative bg-gray-200 text-gray-700 -mb-8 -mx-8 px-4 py-8 lg:py-12`;
   const Content = tw.div`max-w-screen-xl mx-auto relative z-10`;
 
-  const handleUpdateQuantity = (id, newQuantity) => {
+  const handleUpdateQuantity = (id, newQuantity, maxQuantity) => {
     // Your code here
+    if(newQuantity > 0){
+      updateItemQuantity(id, Math.max(1, Math.min(maxQuantity, newQuantity)));
+    }
+    
   };
 
   const handleRemoveItem = (id) => {
@@ -75,9 +79,8 @@ const Cart = () => {
                     <button
                       className="px-3 py-1 bg-gray-200 text-gray-700 rounded"
                       onClick={() =>
-                        updateItemQuantity(
-                          item.id,
-                          Math.max(1, item.quantity - 1)
+                        handleUpdateQuantity(
+                          item.id, item.quantity - 1, item.maxQuantity
                         )
                       }
                       disabled={item.quantity <= 1}
@@ -88,9 +91,8 @@ const Cart = () => {
                     <button
                       className="px-3 py-1 bg-gray-200 text-gray-700 rounded"
                       onClick={() =>
-                        updateItemQuantity(
-                          item.id,
-                          Math.min(item.stock, item.quantity + 1)
+                        handleUpdateQuantity(
+                          item.id, item.quantity + 1, item.maxQuantity
                         )
                       }
                     >
@@ -123,7 +125,7 @@ const Cart = () => {
                 </div>
                 <div className="flex justify-between mt-4">
                   <Link
-                    to={user ? alert('berhasil') : '/login'}
+                    // to={user ? alert('berhasil') : '/login'}
                     className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
                   >
                     {user ? 'Cekout' : 'Login to cekout'}
