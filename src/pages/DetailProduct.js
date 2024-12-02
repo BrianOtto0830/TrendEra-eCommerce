@@ -116,7 +116,7 @@ const DetailProduct = () => {
                 Back to products
               </button>
               {Array.isArray(product.images) && product.images.length > 0 && (
-                <>
+                <>  
                   <ProductImage
                     src={`https://qhsdnskiusrydliavrxp.supabase.co/storage/v1/object/public/images/${product.images[mainImageIndex]}`}
                     // src={product.images[mainImageIndex]}

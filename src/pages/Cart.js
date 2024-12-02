@@ -50,7 +50,8 @@ const Cart = () => {
                   {/* Product Image */}
                   <div className="flex items-center space-x-4">
                     <img
-                      src={item.imageSrc}
+                      src={`https://qhsdnskiusrydliavrxp.supabase.co/storage/v1/object/public/images/${item.images[0]}`}
+                      // src={item.imageSrc}
                       alt={item.title}
                       className="w-24 h-24 object-cover rounded"
                     />
