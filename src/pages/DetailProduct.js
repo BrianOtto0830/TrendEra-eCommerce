@@ -129,7 +129,7 @@ const DetailProduct = () => {
                   {product.images.map((image, index) => (
                     <img
                       key={index}
-                      src={image}
+                      src={`https://qhsdnskiusrydliavrxp.supabase.co/storage/v1/object/public/images/${image}`}
                       alt={`${product.name} - ${index + 1}`}
                       className={`h-20 w-20 rounded cursor-pointer ${
                         index === mainImageIndex
