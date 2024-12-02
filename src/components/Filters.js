@@ -27,9 +27,18 @@ const Filters = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const [categories, setCategories] = React.useState([]);
   const companies = getUniqueValues(all_products, "company");
-  const colors = getUniqueValues(all_products, "colors");
-  // const colors = [...new Set(all_products.flatMap(product => product.colors))];
-  // const uniqueColors = ["all", ...colors];
+  // const colors = getUniqueValues(all_products, "colors");
+  const colors = [...new Set(all_products.flatMap(product => product.colors))];
+  const uniqueColors = [...colors];
+  console.log("uniqueColors", uniqueColors);
+
+  const colorProducts = [ ...new Set(uniqueColors.map((color) =>  color.color))];
+  console.log("colorProducts", colorProducts);
+  const allColors = ["all", ...colorProducts];
+  console.log("allColors", allColors);
+
+  
+  
 
   const getCategories = async () => {
     try{
@@ -114,8 +123,8 @@ const Filters = () => {
           <div className="form-control">
             <h5>colors</h5>
             <div className="colors">
-              {colors.map((c, index) => {
-                console.log("ini c tuh apa ya: ", c);
+              {allColors.map((c, index) => {
+                
                 if (c === "all") {
                   return (
                     <button
@@ -135,14 +144,14 @@ const Filters = () => {
                   <button
                     key={index}
                     name="color"
-                    style={{ background: c.color }}
+                    style={{ background: c }}
                     className={`${
                       color === c ? "color-btn active" : "color-btn"
                     }`}
-                    data-color={c.color}
+                    data-color={c}
                     onClick={updateFilters}
                   >
-                    {color === c.color ? <FaCheck /> : null}
+                    {color === c ? <FaCheck /> : null}
                   </button>
                 );
               })}
