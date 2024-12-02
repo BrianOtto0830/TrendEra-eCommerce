@@ -61,7 +61,7 @@ const Cart = () => {
                         Rp {formatPrice(item.price)}
                       </p>
                       <div className="flex items-center">
-                        <span className="text-gray-600 mr-2">Color:</span>
+                        <span className="text-gray-600 mr-2">Color: </span>
                         <span
                           className="inline-block w-6 h-6 rounded-full"
                           style={{ backgroundColor: item.color }}

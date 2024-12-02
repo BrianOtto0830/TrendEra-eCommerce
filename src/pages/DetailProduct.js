@@ -22,9 +22,11 @@ const DetailProduct = () => {
   const [showModal, setShowModal] = useState(false);
   const [mainImageIndex, setMainImageIndex] = useState(0);
   const [selectedColor, setSelectedColor] = useState(null);
-  console.log("isi product: ",product);
+  const [maxQuantity, setMaxQuantity] = useState(0);
+
 
   const handleColorClick = (color) => {
+    setQuantity(1);
     setSelectedColor(color);
   };
   const changeMainImage = (index) => {
@@ -93,7 +95,12 @@ const DetailProduct = () => {
   };
 
   const handleQuantityChange = (newQuantity) => {
-    setQuantity(Math.max(1, Math.min(10, newQuantity))); // Ensure quantity is within the allowed range
+    if (!selectedColor) {
+      toast.warning('Please select a color first');
+      return;
+    }
+    setQuantity(Math.max(1, Math.min(maxQuantity, newQuantity))); // Ensure quantity is within the allowed range
+    
   };
 
   useEffect(() => {
@@ -116,7 +123,7 @@ const DetailProduct = () => {
                 Back to products
               </button>
               {Array.isArray(product.images) && product.images.length > 0 && (
-                <>  
+                <>
                   <ProductImage
                     src={`https://qhsdnskiusrydliavrxp.supabase.co/storage/v1/object/public/images/${product.images[mainImageIndex]}`}
                     // src={product.images[mainImageIndex]}
@@ -191,7 +198,9 @@ const DetailProduct = () => {
                               : 'border-transparent'
                           }`}
                           style={{ backgroundColor: color.color }}
-                          onClick={() => handleColorClick(color.color)}
+                          onClick={() => {handleColorClick(color.color);
+                            setMaxQuantity(color.quantity);
+                          }}
                         >
                           {selectedColor === color.color && (
                             <FaCheck
