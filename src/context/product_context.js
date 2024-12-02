@@ -6,6 +6,7 @@ const ProductsContext = React.createContext();
 export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [product, setProduct] = useState([]);
+  const [loading, setLoading] = useState(false);
   const fetchProducts = async () => {
     try {
       // const response = await axios.get(
@@ -27,16 +28,20 @@ export const ProductsProvider = ({ children }) => {
   // belum dipakai karna masih menggunakan data di utuls bukan data dari API
   const getProductById = async (id) => {
     try {
+      setLoading(true);
       const response = await axios.get(
         `http://localhost:3001/api/product/${id}`
       );
-
       // Memotong array hasil response menjadi 14 data
-      setProduct(response.data);
+      setProduct(response.data.data);
       // Your code
     } catch (err) {
       // Your code
+      console.error('Error fetching product:', err.message);
+      setProduct(null);
       console.log(err);
+    } finally {
+      setLoading(false);
     }
   };
 

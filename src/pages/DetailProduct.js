@@ -22,6 +22,7 @@ const DetailProduct = () => {
   const [showModal, setShowModal] = useState(false);
   const [mainImageIndex, setMainImageIndex] = useState(0);
   const [selectedColor, setSelectedColor] = useState(null);
+  console.log("isi product: ",product);
 
   const handleColorClick = (color) => {
     setSelectedColor(color);
@@ -82,9 +83,9 @@ const DetailProduct = () => {
 
   useEffect(() => {
     // Your code here
-    // getProductById(id);
-    const findProduct = data.find((item) => item.id.toString() === id);
-    setProduct(findProduct);
+    getProductById(id);
+    // const findProduct = data.find((item) => item.id.toString() === id);
+    // setProduct(findProduct);
   }, [id]);
 
   const handleChangePrice = () => {
@@ -117,7 +118,8 @@ const DetailProduct = () => {
               {Array.isArray(product.images) && product.images.length > 0 && (
                 <>
                   <ProductImage
-                    src={product.images[mainImageIndex]}
+                    src={`https://qhsdnskiusrydliavrxp.supabase.co/storage/v1/object/public/images/${product.images[mainImageIndex]}`}
+                    // src={product.images[mainImageIndex]}
                     alt={product.name}
                   />
                 </>
@@ -172,9 +174,8 @@ const DetailProduct = () => {
               </RatingReviews>
               <Description>Deskripsi</Description>
               <div>
-                <p className="mb-2">Available : </p>
-                <p className="mb-2">SKU : </p>
-                <p className="mb-2">Company :</p>
+                <p className="mb-2">Company : {product.company}</p>
+                <p className="mb-2">Description : {product.description}</p>
                 <hr className="my-4 h-1 border bg-gray-500" />
 
                 <div className="flex">
@@ -185,14 +186,14 @@ const DetailProduct = () => {
                         <div
                           key={index}
                           className={`relative w-8 h-8 rounded-full cursor-pointer border-2 ${
-                            selectedColor === color
+                            selectedColor === color.color
                               ? 'border-red-500'
                               : 'border-transparent'
                           }`}
-                          style={{ backgroundColor: color }}
-                          onClick={() => handleColorClick(color)}
+                          style={{ backgroundColor: color.color }}
+                          onClick={() => handleColorClick(color.color)}
                         >
-                          {selectedColor === color && (
+                          {selectedColor === color.color && (
                             <FaCheck
                               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white"
                               size={16}
