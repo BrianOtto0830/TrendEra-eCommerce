@@ -12,6 +12,7 @@ import { FaStar, FaStarHalf, FaCheck } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useProductsContext } from 'context/product_context';
 import { data } from 'helpers/utils';
+import { set } from 'react-hook-form';
 
 const DetailProduct = () => {
   const { id } = useParams();
@@ -41,7 +42,7 @@ const DetailProduct = () => {
   const navigate = useNavigate();
   const Container = tw.div`relative bg-gray-200 text-gray-700 -mb-8 -mx-8 px-8 py-20 lg:py-24`;
   const Content = tw.div`max-w-screen-xl mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between`;
-  const ProductImage = tw.img`w-full lg:w-[500px] h-64 lg:h-[400px] object-cover rounded-md mb-8 lg:mb-0`;
+  const ProductImage = tw.img`w-full lg:w-[500px] h-64 lg:h-[600px] object-cover rounded-md mb-8 lg:mb-0`;
   const ProductInfo = tw.div`text-center lg:text-left lg:w-1/2 my-auto`;
   const Title = tw.h2`text-3xl font-semibold mb-2`;
   const Description = tw.p`text-gray-600 mb-4`;
@@ -128,12 +129,40 @@ const DetailProduct = () => {
   };
 
   const handleQuantityChange = (newQuantity) => {
+    //harus memilih warna terlebih dahulu
+    //cek quantity yang ada, jika masih ada maka handlequantitychange bisa dijalankan
+    //lalu cek quantity barang yang ada dan yang ada di cart.
+    //handle quantity change hanya bisa menambahkan quantity sesuai quantity yang tersedia.
+    //quantity yang tersedia adalah maxquantity di kurangi quantity di cart
     if (!selectedColor) {
       toast.warning('Please select a color first');
       return;
     }
     
-    setQuantity(Math.max(1, Math.min(maxQuantity, newQuantity))); //hanya bisa menambahkan sesuai stock yang ada
+    // setQuantity(Math.max(1, Math.min(maxQuantity, newQuantity))); //hanya bisa menambahkan sesuai stock yang ada
+    // Cari item yang ada di keranjang berdasarkan ID dan warna
+    const existingItem = items.find(
+      (item) =>
+        item.id === product.id &&
+        (!selectedColor || item.color === selectedColor)
+    );
+
+    // Hitung stok yang tersedia: stok maksimal dikurangi jumlah di keranjang
+    const availableStock = maxQuantity - (existingItem?.quantity || 0);
+
+    if (newQuantity < 1) {
+      toast.warning('Quantity cannot be less than 1.');
+      setQuantity(1);
+      return;
+    }
+
+    if (newQuantity > availableStock) {
+      toast.error(`Stock is limited. Only ${availableStock} left.`);
+      setQuantity(availableStock);
+      return;
+    }
+
+    setQuantity(newQuantity); // Set kuantitas baru jika valid
     
   };
 
@@ -141,7 +170,7 @@ const DetailProduct = () => {
     const updatedPrice = handleChangePrice();
     setProduct((prevProduct) => ({ ...prevProduct, updatedPrice }));
   }, [quantity, product.price]);
-
+//pada useEffect diatas saya menambahkan handleChangePrice dan setProduct jika ingin menghilangkan warning
   return (
     <AnimationRevealPage>
       <Header className={'mb-8'} />
