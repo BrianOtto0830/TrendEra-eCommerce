@@ -24,6 +24,7 @@ const DetailProduct = () => {
   const [mainImageIndex, setMainImageIndex] = useState(0);
   const [selectedColor, setSelectedColor] = useState(null);
   const [maxQuantity, setMaxQuantity] = useState(0);
+  const [selectedColorId, setSelectedColorId] = useState(null);
 
 
   const handleColorClick = (color) => {
@@ -104,7 +105,10 @@ const DetailProduct = () => {
             color: selectedColor, // Tambahkan warna yang dipilih
             maxQuantity: maxQuantity,
             id: `${selectedItem.id}-${selectedColor}`, //untuk membuat product dengan warna berbeda unique
-            trueId: selectedItem.id
+            trueId: selectedItem.id,
+            colorId: selectedColorId,
+            img: `${selectedItem.images[mainImageIndex]}`,
+            trueImg: selectedItem.images[mainImageIndex],
           },
           quantity
         );
@@ -260,6 +264,7 @@ const DetailProduct = () => {
                             style={{ backgroundColor: color.color }}
                             onClick={() => {handleColorClick(color.color);
                               setMaxQuantity(color.quantity);
+                              setSelectedColorId(color.id);
                             }}
                           >
                             {selectedColor === color.color && (
