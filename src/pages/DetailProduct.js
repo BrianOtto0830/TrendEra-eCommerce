@@ -57,18 +57,12 @@ const DetailProduct = () => {
   const CancelButton = tw.button`text-sm mt-4 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md ml-5 focus:outline-none cursor-pointer`;
 
   const handleAddToCart = () => {
-    // if (selectedItem && selectedColor) {
-    //   // Lengkapi code berikut
-    //   addItem(selectedItem, quantity);
-    //   toast.success(`${selectedItem.item.name} add to cart`);
-    //   addItem({...selectedItem, maxQuantity: maxQuantity}, quantity);
-    //   setShowModal(false);
-    // } else {
-    //   toast.error(`Sorry stock avaible ${selectedItem.stock} only`);
-    // }
     // cari itemnya udah ada atau belum di cart, kalau ada tambahkan quantitiy yang ada di keranjang dan quantity yang akan masuk ke kerajang
     // jika hasilnya lebih besar dari max quantity di keranjang maka tampilkan error
-    // jika mau cari quantity sisa maka total - maxQuantity
+    // buat jika item yang dimasukkan memiliki warna yang berbeda maka item pada cart harus tampil berdasarkan warna yang dipilih
+    //ketika kita add, menambahkan property baru. kita simpen idnya ke property baru
+    //jadi semua product akan unique berdasarkan warnanya.
+    // jangan buat datanya ketumpuk
     if (!selectedItem) {
       toast.error('Sorry, product is unavailable.');
       return;
@@ -92,6 +86,7 @@ const DetailProduct = () => {
       // Validasi kuantitas tidak melebihi stok maksimal
       if (totalQuantity > maxQuantity) {
         toast.error(`Cannot add more items. Maximum quantity is ${maxQuantity}.`);
+        return;
       } else {
         // Perbarui kuantitas di keranjang
         updateItemQuantity(existingItem.id, totalQuantity);
@@ -108,6 +103,8 @@ const DetailProduct = () => {
             ...selectedItem,
             color: selectedColor, // Tambahkan warna yang dipilih
             maxQuantity: maxQuantity,
+            id: `${selectedItem.id}-${selectedColor}`, //untuk membuat product dengan warna berbeda unique
+            trueId: selectedItem.id
           },
           quantity
         );
