@@ -27,7 +27,7 @@ const Filters = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const [categories, setCategories] = React.useState([]);
   const companies = getUniqueValues(all_products, "company");
-  // const colors = getUniqueValues(all_products, "colors");
+  
   const colors = [...new Set(all_products.flatMap(product => product.colors))];
   const uniqueColors = [...colors];
   console.log("uniqueColors", uniqueColors);
