@@ -34,8 +34,11 @@ const Checkout = () => {
 
   const handleCheckOut = async () => {
     // Your code here
-    const response = await createOrder();
-    // emptyCart();
+    console.log(items);
+    
+    const response = await createOrder(items);
+    emptyCart();
+    
     // console.log("response", response.data.data);
     // toast.success(response.data.data.message);
   };
@@ -59,7 +62,7 @@ const Checkout = () => {
     //updating the 'orderItems' in the 'formData' state
     setFormData((prevData) => ({
       ...prevData,
-      orderItems: updateOrderItems,
+      items: updateOrderItems,
     }));
   }, []);
 

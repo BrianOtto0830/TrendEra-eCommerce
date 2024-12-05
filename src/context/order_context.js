@@ -2,18 +2,20 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useCart } from "react-use-cart";
 
 const OrdersContext = React.createContext();
 
 export const OrderProvider = ({ children }) => {
   const [orders, setOrders] = useState([]);
   const [order, setOrder] = useState([]);
+  const { items, emptyCart } = useCart();
   const [formData, setFormData] = useState({
     address: "",
     city: "",
     postalCode: "",
     country: "",
-    status: "",
+    status: "PENDING",
     items: [],
   });
 
@@ -53,7 +55,8 @@ export const OrderProvider = ({ children }) => {
     const body = {
       ...formData, // Mengirim data form yang telah diisi
     };
-  
+    console.log("body",body)
+    console.log("formdata",formData)
     console.log("Creating order...");
   
     try {
@@ -75,6 +78,7 @@ export const OrderProvider = ({ children }) => {
         status: "",
         items: [],
       });
+      
     } catch (error) {
       // Menangkap error dan memberikan informasi
       if (error.response) {
