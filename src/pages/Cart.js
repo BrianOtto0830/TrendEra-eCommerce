@@ -21,7 +21,6 @@ const Cart = () => {
     if(newQuantity > 0){
       updateItemQuantity(id, Math.max(1, Math.min(maxQuantity, newQuantity)));
     }
-    
   };
 
   const handleRemoveItem = (id) => {
@@ -57,12 +56,12 @@ const Cart = () => {
                   <div className="flex items-center space-x-6 w-full lg:w-1/2">
                     <img
                       src={`https://qhsdnskiusrydliavrxp.supabase.co/storage/v1/object/public/images/${item.images[0]}`}
-                      alt={item.title}
+                      alt={item.name}
                       className="w-32 h-32 object-cover rounded-lg border border-gray-200"
                     />
                     <div>
                       <h4 className="text-2xl font-bold text-gray-900">
-                        {item.title}
+                        {item.name}
                       </h4>
                       <p className="text-gray-500 mt-1">{formatPrice(item.price)}</p>
                       <div className="flex items-center mt-3">
@@ -109,9 +108,6 @@ const Cart = () => {
                       </button>
                     </div>
                     
-                    
-
-  
                     {/* Price */}
                     <div>
                       <p className="text-xl font-semibold text-gray-900 mt-4 lg:mt-0">
