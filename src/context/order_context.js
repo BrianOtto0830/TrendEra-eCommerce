@@ -43,19 +43,30 @@ export const OrderProvider = ({ children }) => {
 
   // Buat fungsi create order disni
   const createOrder = async () => {
+    const url = `http://localhost:3001/api/orders`;
+    const config = {
+      headers: {
+        Authorization: `Bearer ${user.token}`, // Pastikan menggunakan "Bearer" jika diperlukan
+        "Content-Type": "application/json", // Header tambahan untuk format JSON
+      },
+    };
+    const body = {
+      ...formData, // Mengirim data form yang telah diisi
+    };
+  
+    console.log("Creating order...");
+  
     try {
-      const response = await axios.post(
-        `http://localhost:3001/api/orders`,
-        formData,
-        {
-          headers: {
-            Authorization: `${user.token}`,
-          },
-        }
-      );
-      console.log("response", response.data.data);
+      const response = await axios.post(url, body, config);
+      console.log("Order created successfully:", response.data.data);
+  
+      // Notifikasi sukses
       toast.success(response.data.message);
-      setOrders(response.data.data);
+  
+      // Update state untuk daftar pesanan
+      setOrders((prevOrders) => [...prevOrders, response.data.data]);
+  
+      // Reset form data setelah berhasil
       setFormData({
         address: "",
         city: "",
@@ -64,10 +75,18 @@ export const OrderProvider = ({ children }) => {
         status: "",
         items: [],
       });
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      // Menangkap error dan memberikan informasi
+      if (error.response) {
+        console.error("Error Response:", error.response.data);
+        toast.error(error.response.data.message || "Failed to create order.");
+      } else {
+        console.error("Error:", error.message);
+        toast.error("An error occurred. Please try again.");
+      }
     }
   };
+  
   return (
     <OrdersContext.Provider
       value={{

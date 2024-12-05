@@ -35,9 +35,9 @@ const Checkout = () => {
   const handleCheckOut = async () => {
     // Your code here
     const response = await createOrder();
-    emptyCart();
-    console.log("response", response.data.data);
-    toast.success(response.data.data.message);
+    // emptyCart();
+    // console.log("response", response.data.data);
+    // toast.success(response.data.data.message);
   };
 
   const calculateProductsTotal = () => {
@@ -120,7 +120,8 @@ const Checkout = () => {
         />
         <button
           type="submit"
-          className="w-full bg-green-500 hover:bg-green-700 text-black font-bold py-2 px-4 rounded mt-4 transition duration-300 ease-in-out"
+          className="w-full  hover:bg-green-700 text-black font-bold py-2 px-4 rounded mt-4 transition duration-300 ease-in-out"
+          style={{ backgroundColor: "#00C853" }}
           onClick={handleCheckOut}
         >
           Order Now
