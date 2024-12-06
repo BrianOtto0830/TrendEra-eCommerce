@@ -116,7 +116,7 @@ const LoginPage = () => {
                   Dont have an account?{" "}
                   <a
                     href={signupUrl}
-                    className="border-b border-gray-700 border-dotted"
+                    className="border-b border-gray-900 border-dotted"
                   >
                     Sign Up
                   </a>

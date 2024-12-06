@@ -36,7 +36,7 @@ const Checkout = () => {
     // Your code here
     console.log(items);
     
-    const response = await createOrder(items);
+    const response = await createOrder();
     emptyCart();
     
     // console.log("response", response.data.data);
@@ -125,7 +125,6 @@ const Checkout = () => {
           type="submit"
           className="w-full  hover:bg-green-700 text-black font-bold py-2 px-4 rounded mt-4 transition duration-300 ease-in-out"
           style={{ backgroundColor: "#00C853" }}
-          onClick={handleCheckOut}
         >
           Order Now
         </button>
