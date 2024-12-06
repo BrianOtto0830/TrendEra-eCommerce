@@ -57,6 +57,7 @@ const Checkout = () => {
       productId: item.trueId, //Assuming 'id' is the unique identifier for each product
       quantity: parseFloat(item.quantity),
       colorId: item.colorId,
+      image: item.image,
     }));
 
     //updating the 'orderItems' in the 'formData' state

@@ -25,14 +25,17 @@ const DetailProduct = () => {
   const [selectedColor, setSelectedColor] = useState(null);
   const [maxQuantity, setMaxQuantity] = useState(0);
   const [selectedColorId, setSelectedColorId] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
 
 
   const handleColorClick = (color) => {
     setQuantity(1);
     setSelectedColor(color);
   };
-  const changeMainImage = (index) => {
+  const changeMainImage = (index, image) => {
     setMainImageIndex(index);
+    setSelectedImage(image);
+    console.log("image", image);
   };
 
   const openModal = () => {
@@ -107,6 +110,7 @@ const DetailProduct = () => {
           id: uniqueId, // ID unik berdasarkan warna
           trueId: selectedItem.id, // ID asli produk
           colorId: selectedColorId, // ID warna
+          image: selectedImage
         },
         quantity
       );
@@ -124,7 +128,7 @@ const DetailProduct = () => {
   }, [id]);
 
   const handleChangePrice = () => {
-    return product.price * quantity;
+    return product?.price * quantity;
   };
 
   const handleQuantityChange = (newQuantity) => {
@@ -168,7 +172,7 @@ const DetailProduct = () => {
   useEffect(() => {
     const updatedPrice = handleChangePrice();
     setProduct((prevProduct) => ({ ...prevProduct, updatedPrice }));
-  }, [quantity, product.price]);
+  }, [quantity, product?.price]);
 //pada useEffect diatas saya menambahkan handleChangePrice dan setProduct jika ingin menghilangkan warning
   return (
     <AnimationRevealPage>
@@ -204,7 +208,7 @@ const DetailProduct = () => {
                           ? 'border-2 border-red-500'
                           : ''
                       }`}
-                      onClick={() => changeMainImage(index)}
+                      onClick={() => changeMainImage(index, image)}
                     />
                   ))}
                 </div>

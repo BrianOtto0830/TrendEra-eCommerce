@@ -41,13 +41,13 @@ const Orders = () => {
                   key={order.id}
                   className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 ease-in-out"
                 >
-                  <h2 className="text-xl font-semibold text-gray-800 mb-2">Order ID: {order.id}</h2>
-                  <p className="text-gray-600">Status: <span className={`font-semibold ${order.status === "PENDING" ? "text-yellow-500" : "text-green-500"}`}>{order.status}</span></p>
-                  <p className="text-gray-600">Address: {order.address}</p>
-                  <p className="text-gray-600">City: {order.city}</p>
-                  <p className="text-gray-600">Postal Code: {order.postalCode}</p>
-                  <p className="text-gray-600">Country: {order.country}</p>
-                  <p className="text-gray-500 text-sm">Order Created At: {new Date(order.createdAt).toLocaleString()}</p>
+                  <h2 className="text-xl font-semibold text-gray-800 mb-2">Order ID: {order?.id}</h2>
+                  <p className="text-gray-600">Status: <span className={`font-semibold ${order.status === "PENDING" ? "text-yellow-500" : "text-green-500"}`}>{order?.status}</span></p>
+                  <p className="text-gray-600">Address: {order?.address}</p>
+                  <p className="text-gray-600">City: {order?.city}</p>
+                  <p className="text-gray-600">Postal Code: {order?.postalCode}</p>
+                  <p className="text-gray-600">Country: {order?.country}</p>
+                  <p className="text-gray-500 text-sm">Order Created At: {new Date(order?.createdAt).toLocaleString()}</p>
                   
                   <div className="mt-4">
                     <h3 className="text-lg font-medium text-gray-700 mb-2">Items:</h3>
@@ -57,7 +57,7 @@ const Orders = () => {
                         return(
                           <div key={index} className="flex items-center space-x-4 mb-4">
                             <img
-                              src={`https://qhsdnskiusrydliavrxp.supabase.co/storage/v1/object/public/images/${item.product?.images?.[0]}`}
+                              src={`https://qhsdnskiusrydliavrxp.supabase.co/storage/v1/object/public/images/${item.image}`}
                               alt={item.product?.name || "Product Image"}
                               className="w-16 h-16 object-cover rounded"
                             />
