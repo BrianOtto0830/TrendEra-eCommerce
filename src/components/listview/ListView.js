@@ -25,7 +25,7 @@ const ListView = ({ products }) => {
   };
 
   return (
-    <section>
+    <section className="list-view">
       {currentProducts.map((item) => (
         <article key={item.id} className="flex pb-10 ">
           <img src={`https://qhsdnskiusrydliavrxp.supabase.co/storage/v1/object/public/images/${item.images[0]}`} className="w-[250px] h-[150px]" alt=""></img>

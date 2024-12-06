@@ -21,31 +21,40 @@ const GridView = ({ products }) => {
   };
 
   return (
-    <>
-      <div className="products-container grid-cols-3">
-        {displayedProducts.map((item) => {
-          return (
-            <Product
-              key={item.id}
-              image={`https://qhsdnskiusrydliavrxp.supabase.co/storage/v1/object/public/images/${item.images[0]}`}
-              name={item.name}
-              id={item.id}
-              price={item.price}
-            ></Product>
-          );
-        })}
+    <div className="gridview-container">
+      <div className="products-container">
+        {displayedProducts.map((item) => (
+          <Product
+            key={item.id}
+            image={`https://qhsdnskiusrydliavrxp.supabase.co/storage/v1/object/public/images/${item.images[0]}`}
+            name={item.name}
+            id={item.id}
+            price={item.price}
+          />
+        ))}
       </div>
-      <div className="pagination-buttons flex justify-between mt-10">
-        <button onClick={handlePrevPage} disabled={currentPage === 1}>
+      <div className="pagination-container">
+        <button
+          className="pagination-button"
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+        >
           Previous
         </button>
-        <span>{`Page ${currentPage} of ${totalPages}`}</span>
-        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+        <span className="pagination-info">
+          Page <strong>{currentPage}</strong> of {totalPages}
+        </span>
+        <button
+          className="pagination-button"
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+        >
           Next
         </button>
       </div>
-    </>
+    </div>
   );
+  
 };
 
 export default GridView;

@@ -1,18 +1,87 @@
+/* Pagination styles */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
 
+.pagination-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.pagination-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.pagination-button:disabled {
+    background-color: #d6d6d6;
+    cursor: not-allowed;
+}
+
+.pagination-info {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Product card enhancements */
+.products-container > div {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.products-container > div:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
 
 .products-container {
     display: grid;
     gap: 2rem 1.5rem;
 }
 
-@media (min-width: 992px) {
+
+/* Responsive Grid Columns */
+@media (min-width: 768px) {
     .products-container {
-       
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
     }
 }
-    
+
+@media (min-width: 992px) {
+    .products-container {
+        grid-template-columns: repeat(2, 1fr); /* 3 columns for larger screens */
+    }
+}
+
 @media (min-width: 1170px) {
     .products-container {
-        
+        grid-template-columns: repeat(3, 1fr); /* 4 columns for extra-large screens */
     }
+}
+
+/* Product Image Styling */
+.products-container img {
+    width: 100%;
+    height: 450px; /* Set a fixed height for consistency */
+    object-fit: contain; /* Ensure image is fully visible without cropping */
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Optional: adds contrast for images with transparent areas */
+    transition: transform 0.3s ease-in-out;
+}
+
+.products-container img:hover {
+    transform: scale(1.05); /* Slight zoom effect for interactivity */
 }
