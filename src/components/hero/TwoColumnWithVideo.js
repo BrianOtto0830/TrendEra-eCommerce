@@ -33,18 +33,45 @@ const PrimaryButton = styled.button`
   }
 `;
 
-// Watch video button styled with icon and hover effect
+// Watch video button styled with icon and hover effect, saya tambahkan animasi untuk button videonya
 const WatchVideoButton = styled.button`
-  ${tw`mt-4 sm:mt-0 sm:ml-8 flex items-center text-gray-600 transition duration-300 hover:text-blue-400 focus:outline-none`}
+  ${tw`mt-4 sm:mt-0 sm:ml-8 flex items-center text-gray-600 transition-all duration-300 hover:text-blue-400 focus:outline-none`}
+  &:hover {
+    transform: scale(1.1);
+  }
   .playIcon {
     ${tw`stroke-1 w-12 h-12 text-blue-500`}
+    animation: bounce 1.5s infinite;
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
   }
   .playText {
     ${tw`ml-2 font-medium`}
   }
 `;
 
-const IllustrationContainer = tw.div`flex justify-center md:justify-end items-center relative max-w-3xl lg:max-w-none`;
+const IllustrationContainer = styled.div`
+  ${tw`flex justify-center md:justify-end items-center relative max-w-3xl lg:max-w-none`}
+  animation: slideIn 1s ease-in-out;
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+`;
 
 // Decorator Blobs for extra design details
 const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
