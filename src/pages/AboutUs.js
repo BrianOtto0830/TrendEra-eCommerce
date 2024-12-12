@@ -68,11 +68,40 @@ export default () => {
         <MainFeature1
           subheading={<Subheading>Our Vision</Subheading>}
           heading="We aspire to redefine modern fashion."
+          description="At Trend Era, our vision is to revolutionize the way people experience fashion by providing a seamless blend of style, quality, and affordability. We believe in empowering individuals to express their unique personalities through a wide range of curated clothing, bags, and accessories. With a focus on global trends and sustainable choices, we are committed to offering products that are not only fashionable but also ethically sourced and crafted. Our aim is to create a diverse platform where customers can explore the latest in fashion, whether it's for a casual day out, a formal gathering, or a special occasion. By embracing innovation, we're building an inclusive shopping experience that ensures everyone finds something that resonates with their unique taste. Our commitment to exceptional customer service means we strive to deliver an experience that goes beyond just a transaction, fostering long-term relationships with our global customer base."
           buttonRounded={false}
           primaryButtonText="Contact Us"
           imageSrc="https://i.pinimg.com/736x/5e/4c/ab/5e4cab7b1c9da47350069b83f195a3ba.jpg"
           textOnLeft={false}
         />
+
+        />
+      </motion.div>
+
+      {/* Achievements Section */}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={motionVariants.fadeIn}
+      >
+        <MainFeature1
+          subheading={<Subheading>Our Achievements</Subheading>}
+          heading="Leading the Fashion Industry Since 2020"
+          description="We've successfully served over 10,000+ happy customers, launched multiple successful fashion collections, and maintained a 4.8/5 customer satisfaction rating. Our commitment to quality and style has earned us recognition in the fashion industry."
+          buttonRounded={false}
+          primaryButtonText="Learn More"
+          imageSrc="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070&auto=format&fit=crop"
+          textOnLeft={true}
+        />
+      </motion.div>
+
+      {/* Team Section */}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={motionVariants.fadeIn}
+      >
+        <TeamCardGrid subheading={<Subheading>Our Team</Subheading>} />
       </motion.div>
 
       {/* Features Section */}
@@ -104,15 +133,6 @@ export default () => {
           ]}
           linkText=""
         />
-      </motion.div>
-
-      {/* Team Section */}
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={motionVariants.fadeIn}
-      >
-        <TeamCardGrid subheading={<Subheading>Our Team</Subheading>} />
       </motion.div>
 
       {/* Footer Section */}

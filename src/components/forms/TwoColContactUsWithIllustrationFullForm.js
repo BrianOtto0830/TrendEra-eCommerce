@@ -1,10 +1,9 @@
 import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading, Subheading as SubheadingBase } from "components/misc/Headings.js";
-import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import EmailIllustrationSrc from "images/email-illustration.svg";
+import CustomerServiceIllustrationSrc from "images/customer_service_generated.jpg";
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24`;
@@ -25,43 +24,23 @@ const Subheading = tw(SubheadingBase)`text-center md:text-left`;
 const Heading = tw(SectionHeading)`mt-4 font-black text-left text-3xl sm:text-4xl lg:text-5xl text-center md:text-left leading-tight`;
 const Description = tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:text-lg font-medium leading-relaxed text-secondary-100`
 
-const Form = tw.form`mt-8 md:mt-10 text-sm flex flex-col max-w-sm mx-auto md:mx-0`
-const Input = tw.input`mt-6 first:mt-0 border-b-2 py-3 focus:outline-none font-medium transition duration-300 hocus:border-primary-500`
-const Textarea = styled(Input).attrs({as: "textarea"})`
-  ${tw`h-24`}
-`
-
-const SubmitButton = tw(PrimaryButtonBase)`inline-block mt-8`
-
 export default ({
-  subheading = "Contact Us",
-  heading = <>Feel free to <span tw="text-primary-500">get in touch</span><wbr/> with us.</>,
-  description = "At Trend Era, we’re committed to providing exceptional service. Whether you have questions, feedback, or need assistance, we’re here to help. Reach out to us and we’ll get back to you as soon as possible.",
-  submitButtonText = "Send",
-  formAction = "#",
-  formMethod = "get",
+  subheading = "Contact Information",
+  heading = <>Get in <span tw="text-primary-500">Touch</span></>,
+  description = "We'd love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out. Our team is always here to assist you. If you need assistance, don’t hesitate to contact us. We are here to help and ensure you have the best experience possible. Let’s connect and collaborate for a brighter future together.",
   textOnLeft = true,
 }) => {
-  // The textOnLeft boolean prop can be used to display either the text on left or right side of the image.
-
   return (
     <Container>
       <TwoColumn>
         <ImageColumn>
-          <Image imageSrc={EmailIllustrationSrc} />
+          <Image imageSrc={CustomerServiceIllustrationSrc} />
         </ImageColumn>
         <TextColumn textOnLeft={textOnLeft}>
           <TextContent>
             {subheading && <Subheading>{subheading}</Subheading>}
             <Heading>{heading}</Heading>
             {description && <Description>{description}</Description>}
-            <Form action={formAction} method={formMethod}>
-              <Input type="email" name="email" placeholder="Your Email Address" />
-              <Input type="text" name="name" placeholder="Full Name" />
-              <Input type="text" name="subject" placeholder="Subject" />
-              <Textarea name="message" placeholder="Your Message Here" />
-              <SubmitButton type="submit">{submitButtonText}</SubmitButton>
-            </Form>
           </TextContent>
         </TextColumn>
       </TwoColumn>

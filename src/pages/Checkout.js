@@ -72,64 +72,74 @@ const Checkout = () => {
   return (
     <AnimationRevealPage>
       <Header className="mb-8" />
-      {/* Your Code Here */}
-      <form onSubmit={handleSubmit(handleCheckOut)}>
-        <label className="block mt-4" htmlFor="address">
-          Address
-        </label>
-        <input
-          className="w-full px-4 py-2 border rounded-md"
-          type="text"
-          name="address"
-          id="address"
-          onChange={handleInputChange}
-          value={formData.address}
-          required
-        />
-        <label className="block mt-4" htmlFor="postalCode">
-          Postal Code
-        </label>
-        <input
-          className="w-full px-4 py-2 border rounded-md"
-          type="text"
-          name="postalCode"
-          id="postalCode"
-          onChange={handleInputChange}
-          value={formData.postalCode}
-          required
-        />
-        <label className="block mt-4" htmlFor="country">
-          Country
-        </label>
-        <input
-          className="w-full px-4 py-2 border rounded-md"
-          type="text"
-          name="country"
-          id="country"
-          onChange={handleInputChange}
-          value={formData.country}
-          required
-        />
-        <label className="block mt-4" htmlFor="city">
-          City
-        </label>
-        <input
-          className="w-full px-4 py-2 border rounded-md"
-          type="text"
-          name="city"
-          id="city"
-          onChange={handleInputChange}
-          value={formData.city}
-          required
-        />
-        <button
-          type="submit"
-          className="w-full  hover:bg-green-700 text-black font-bold py-2 px-4 rounded mt-4 transition duration-300 ease-in-out"
-          style={{ backgroundColor: "#00C853" }}
+      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+        <form
+          onSubmit={handleSubmit(handleCheckOut)}
+          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md"
         >
-          Order Now
-        </button>
-      </form>
+          <h2 className="text-2xl font-bold text-center mb-6">Checkout</h2>
+
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="address">
+            Address
+          </label>
+          <input
+            className="w-full px-4 py-2 mb-4 border rounded-md"
+            type="text"
+            name="address"
+            id="address"
+            onChange={handleInputChange}
+            value={formData.address}
+            required
+          />
+
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="postalCode">
+            Postal Code
+          </label>
+          <input
+            className="w-full px-4 py-2 mb-4 border rounded-md"
+            type="text"
+            name="postalCode"
+            id="postalCode"
+            onChange={handleInputChange}
+            value={formData.postalCode}
+            required
+          />
+
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="country">
+            Country
+          </label>
+          <input
+            className="w-full px-4 py-2 mb-4 border rounded-md"
+            type="text"
+            name="country"
+            id="country"
+            onChange={handleInputChange}
+            value={formData.country}
+            required
+          />
+
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="city">
+            City
+          </label>
+          <input
+            className="w-full px-4 py-2 mb-6 border rounded-md"
+            type="text"
+            name="city"
+            id="city"
+            onChange={handleInputChange}
+            value={formData.city}
+            required
+          />
+
+          <button
+            type="submit"
+            className="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+            style={{ backgroundColor: "#4CAF50"}}
+          >
+            Order Now
+          </button>
+        </form>
+      </div>
       <Footer background="bg-white" />
     </AnimationRevealPage>
   );

@@ -49,7 +49,7 @@ export default ({
   ),
   description = "At Trend Era, our team of fashion professionals designs and curates every collection to ensure the highest quality and style. We blend the latest trends with timeless fashion to bring you pieces that stand out.",
   primaryButtonText = "Discover Our Collection",
-  primaryButtonUrl = "https://timerse.com",
+  primaryButtonUrl = "/",
   imageSrc = TeamIllustrationSrc,
   buttonRounded = true,
   imageRounded = true,
@@ -74,9 +74,10 @@ export default ({
             <Subheading>{subheading}</Subheading>
             <Heading>{heading}</Heading>
             <Description>{description}</Description>
-            <PrimaryButton buttonRounded={buttonRounded} as="a" href={primaryButtonUrl}>
+            {/* dikomen karena tidak butuh tombol pada bagian ini */}
+            {/* <PrimaryButton buttonRounded={buttonRounded} as="a" href={primaryButtonUrl}>
               {primaryButtonText}
-            </PrimaryButton>
+            </PrimaryButton> */}
           </TextContent>
         </TextColumn>
       </TwoColumn>

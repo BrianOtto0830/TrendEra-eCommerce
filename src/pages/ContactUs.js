@@ -65,13 +65,13 @@ export default () => {
   return (
     <AnimationRevealPage>
       <Header />
-      
+      <ContactUsForm />
       {/* Hero Section */}
       <HeroContainer>
         <HeroContent>
-          <HeroText>Get in Touch With Us</HeroText>
+          <HeroText>Let's Build Something Amazing Together</HeroText>
           <HeroSubText>
-            Have questions about our products, services, or just want to say hello? We'd love to hear from you!
+            Whether you have a project in mind or just want to chat about an idea, we'd love to hear from you!
           </HeroSubText>
         </HeroContent>
       </HeroContainer>

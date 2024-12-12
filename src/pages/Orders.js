@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 
 const Orders = () => {
   const Container = tw.div`relative bg-gray-200 text-gray-700 -mb-8 -mx-8 px-4 py-8 lg:py-12`;
-  const Content = tw.div`max-w-screen-xl mx-auto relative z-10`;
+  const Content = tw.div`max-w-4xl mx-auto relative z-10`;
   const PaginationButton = tw.button`px-4 py-2 mx-1 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed`;
 
   const { id } = useParams();
@@ -38,83 +38,101 @@ const Orders = () => {
       <Container>
         <Content>
           <h1 className="text-3xl font-semibold text-center mb-6">Your Orders</h1>
-          
+
           {Array.isArray(orders) && orders.length > 0 ? (
-            <>
-              <div className="space-y-8">
-                {currentOrders.map((order) => (
-                  <div
-                    key={order.id}
-                    className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 ease-in-out"
-                  >
-                    <h2 className="text-xl font-semibold text-gray-800 mb-2">Order ID: {order?.id}</h2>
-                    <p className="text-gray-600">Status: <span className={`font-semibold ${order.status === "PENDING" ? "text-yellow-500" : "text-green-500"}`}>{order?.status}</span></p>
-                    <p className="text-gray-600">Address: {order?.address}</p>
-                    <p className="text-gray-600">City: {order?.city}</p>
-                    <p className="text-gray-600">Postal Code: {order?.postalCode}</p>
-                    <p className="text-gray-600">Country: {order?.country}</p>
-                    <p className="text-gray-500 text-sm">Order Created At: {new Date(order?.createdAt).toLocaleString()}</p>
-                    
-                    <div className="mt-4">
-                      <h3 className="text-lg font-medium text-gray-700 mb-2">Items:</h3>
+            <div className="space-y-8">
+              {currentOrders.map((order) => (
+                <div
+                  key={order.id}
+                  className="bg-white rounded-lg shadow-lg p-6 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+                >
+                  <div className="flex items-center justify-between">
+                    {/* Left Side: Order Details */}
+                    <div className="flex flex-col space-y-2 w-3/4">
+                      <h2 className="text-xl font-semibold text-gray-800">Order ID: {order?.id}</h2>
+                      <p className="text-gray-600">Status: <span className={`font-semibold ${order.status === "PENDING" ? "text-yellow-500" : "text-green-500"}`}>{order?.status}</span></p>
+                      <p className="text-gray-600">Address: {order?.address}</p>
+                      <p className="text-gray-600">City: {order?.city}</p>
+                      <p className="text-gray-600">Postal Code: {order?.postalCode}</p>
+                      <p className="text-gray-600">Country: {order?.country}</p>
+                      <p className="text-gray-500 text-sm">Order Created At: {new Date(order?.createdAt).toLocaleString()}</p>
+                    </div>
+
+                    {/* Right Side: Order Image */}
+                    <div className="w-1/4">
                       {Array.isArray(order.items) && order.items.length > 0 ? (
-                        order.items.map((item, index) => (
-                          <div key={index} className="flex items-center space-x-4 mb-4">
-                            <img
-                              src={`https://qhsdnskiusrydliavrxp.supabase.co/storage/v1/object/public/images/${item.image}`}
-                              alt={item.product?.name || "Product Image"}
-                              className="w-16 h-16 object-cover rounded"
-                            />
-                            <div>
-                              <p className="font-semibold">{item.product?.name || "N/A"}</p>
-                              <p>Quantity: {item.quantity || 0}</p>
-                              <p>Price: Rp {item.product?.price?.toLocaleString("id-ID") || "N/A"}</p>
-                              <p>Color: </p>
-                              <div
-                                className="relative w-6 h-6 rounded-full border 2 border-black"
-                                style={{ backgroundColor: item.color.color || "N/A" }}>
-                              </div>
-                            </div>
-                          </div>
-                        ))
+                        <img
+                          src={`https://qhsdnskiusrydliavrxp.supabase.co/storage/v1/object/public/images/${order.items[0].image}`}
+                          alt={order.items[0].product?.name || "Product Image"}
+                          className="w-full h-auto object-cover rounded-md"
+                        />
                       ) : (
-                        <p>No items found for this order.</p>
+                        <p>No image available</p>
                       )}
                     </div>
                   </div>
-                ))}
-              </div>
 
-              {/* Pagination Controls */}
-              <div className="flex justify-center mt-8 space-x-2">
-                <PaginationButton
-                  onClick={() => handlePageChange(currentPage - 1)}
-                  disabled={currentPage === 1}
-                >
-                  Previous
-                </PaginationButton>
-                
-                {[...Array(totalPages)].map((_, index) => (
-                  <PaginationButton
-                    key={index + 1}
-                    onClick={() => handlePageChange(index + 1)}
-                    className={currentPage === index + 1 ? 'bg-gray-200' : ''}
-                  >
-                    {index + 1}
-                  </PaginationButton>
-                ))}
-
-                <PaginationButton
-                  onClick={() => handlePageChange(currentPage + 1)}
-                  disabled={currentPage === totalPages}
-                >
-                  Next
-                </PaginationButton>
-              </div>
-            </>
+                  <div className="mt-4">
+                    <h3 className="text-lg font-medium text-gray-700 mb-2">Items:</h3>
+                    {Array.isArray(order.items) && order.items.length > 0 ? (
+                      order.items.map((item, index) => (
+                        <div key={index} className="flex items-center space-x-4 mb-4">
+                          <div className="flex-shrink-0 w-16 h-16">
+                            <img
+                              src={`https://qhsdnskiusrydliavrxp.supabase.co/storage/v1/object/public/images/${item.image}`}
+                              alt={item.product?.name || "Product Image"}
+                              className="w-full h-full object-cover rounded"
+                            />
+                          </div>
+                          <div>
+                            <p className="font-semibold">{item.product?.name || "N/A"}</p>
+                            <p>Quantity: {item.quantity || 0}</p>
+                            <p>Price: Rp {item.product?.price?.toLocaleString("id-ID") || "N/A"}</p>
+                            <p>Color: </p>
+                            <div
+                              className="relative w-6 h-6 rounded-full border 2 border-black"
+                              style={{ backgroundColor: item.color.color || "N/A" }}
+                            ></div>
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <p>No items found for this order.</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           ) : (
             <p>No orders available.</p>
           )}
+
+          {/* Pagination Controls */}
+          <div className="flex justify-center mt-8 space-x-2">
+            <PaginationButton
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              Previous
+            </PaginationButton>
+
+            {[...Array(totalPages)].map((_, index) => (
+              <PaginationButton
+                key={index + 1}
+                onClick={() => handlePageChange(index + 1)}
+                className={currentPage === index + 1 ? 'bg-gray-200' : ''}
+              >
+                {index + 1}
+              </PaginationButton>
+            ))}
+
+            <PaginationButton
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </PaginationButton>
+          </div>
         </Content>
       </Container>
 

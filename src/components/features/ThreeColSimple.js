@@ -60,21 +60,21 @@ export default ({
       title: 'Convenient Products',
       description:
         'We design all our clothing with high-quality materials for your comfort throughout the day.',
-      url: 'https://timerse.com',
+      url: '/products',
     },
     {
       imageSrc: SupportIconImage,
       title: '24/7 Support',
       description:
         'We are always ready to assist you with any questions or concerns about the products you have purchased, at any time.',
-      url: 'https://google.com',
+      url: '/contact-us',
     },
     {
       imageSrc: CustomizeIconImage,
       title: 'Design to Your Needs',
       description:
         'We offer a wide range of clothing and accessories that are designed to suit your specific needs and preferences.',
-      url: 'https://reddit.com',
+      url: '/contact-us',
     },
   ],
   linkText = 'Learn More',

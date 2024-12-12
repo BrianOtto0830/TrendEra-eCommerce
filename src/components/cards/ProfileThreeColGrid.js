@@ -9,36 +9,40 @@ import { ReactComponent as TwitterIcon} from "images/twitter-icon.svg";
 import { ReactComponent as LinkedinIcon} from "images/linkedin-icon.svg";
 import { ReactComponent as GithubIcon } from "images/github-icon.svg";
 
-const HeadingContainer = tw.div``
-const Heading = tw(SectionHeading)``
-const Subheading = tw(SubheadingBase)`text-center mb-3`
-const Description = tw(SectionDescription)`mx-auto text-center`
+const HeadingContainer = tw.div`mb-16`;
+const Heading = tw(SectionHeading)`text-center font-black text-4xl sm:text-5xl lg:text-6xl`;
+const Subheading = tw(SubheadingBase)`text-center mt-4 text-primary-500 font-semibold tracking-wide text-sm sm:text-base lg:text-lg`;
+const Description = tw(SectionDescription)`text-center mt-8 text-gray-600 max-w-screen-md mx-auto sm:text-lg lg:text-xl`;
 
-const Cards = tw.div`flex flex-wrap flex-row justify-center sm:max-w-2xl lg:max-w-5xl mx-auto`
-const Card = tw.div`mt-24 w-full sm:w-1/2 lg:w-1/3 flex flex-col items-center`
+const Cards = tw.div`mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto max-w-screen-xl`;
+const Card = styled.div`
+  ${tw`relative flex flex-col items-center p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white`}
+`;
 const CardImage = styled.div`
   ${props => css`background-image: url("${props.imageSrc}");`}
-  ${tw`w-64 h-64 bg-contain bg-center rounded`}
-`
+  ${tw`rounded-full h-40 w-40 bg-cover bg-center hover:scale-110 transition-transform duration-300`}
+`;
 const CardContent = styled.div`
-  ${tw`flex flex-col items-center mt-6`}
+  ${tw`flex flex-col items-center mt-6 text-center`}
   .position {
-    ${tw`uppercase font-bold tracking-widest text-xs text-primary-500`}
+    ${tw`uppercase font-bold tracking-widest text-xs text-primary-500 mb-1`}
   }
   .name {
-    ${tw`mt-1 text-xl font-medium text-gray-900`}
-  9
-`
-
+    ${tw`text-2xl font-medium text-gray-900`}
+  }
+  .bio {
+    ${tw`text-sm text-gray-600 mt-2`}
+  }
+`;
 const CardLinks = styled.div`
-  ${tw`mt-6 flex`}
+  ${tw`mt-4 flex space-x-4`}
   .link {
-    ${tw`mr-8 last:mr-0 text-gray-400 hocus:text-primary-500 transition duration-300`}
+    ${tw`text-gray-400 hover:text-primary-500 transition duration-300`}
     .icon {
       ${tw`fill-current w-6 h-6`}
     }
   }
-`
+`;
 
 export default ({
   heading = "Meet the Trendsetters.",

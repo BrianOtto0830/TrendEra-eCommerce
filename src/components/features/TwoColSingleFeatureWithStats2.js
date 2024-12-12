@@ -67,7 +67,7 @@ export default ({
   ),
   description = 'Explore the latest trends in fashion with Trend Era. From elegant outfits to modern accessories, discover the essence of style with us.',
   primaryButtonText = 'Shop Now',
-  primaryButtonUrl = 'https://timerse.com',
+  primaryButtonUrl = '/products',
   imageSrc = StatsIllustrationSrc,
   imageCss = null,
   imageContainerCss = null,
