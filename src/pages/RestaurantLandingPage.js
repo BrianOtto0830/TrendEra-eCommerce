@@ -55,7 +55,7 @@ export default () => {
       <DownloadApp
         text={
           <>
-            Download the app on{' '}
+            Download {' '}
             <HighlightedTextInverse>Shopee</HighlightedTextInverse> and{' '}
             <HighlightedTextInverse>Tokopedia</HighlightedTextInverse> for exclusive discounts!
           </>

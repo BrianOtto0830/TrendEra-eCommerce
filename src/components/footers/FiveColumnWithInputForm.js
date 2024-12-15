@@ -22,16 +22,13 @@ const LinkList = tw.ul`mt-6 text-sm font-medium`;
 const LinkListItem = tw.li`mt-3`;
 const Link = tw.a`border-b-2 border-transparent hocus:border-gray-700 pb-1 transition duration-300`;
 
-const SubscribeNewsletterColumn = tw(
+const ContactColumn = tw(
   Column
 )`text-center lg:text-left w-full! lg:w-auto! mt-20 lg:mt-12`;
-const SubscribeNewsletterContainer = tw.div`max-w-sm mx-auto lg:mx-0 `;
-const SubscribeText = tw.p`mt-2 lg:mt-6 text-sm font-medium text-gray-600`;
-const SubscribeForm = tw.form`mt-4 lg:mt-6 text-sm sm:flex max-w-xs sm:max-w-none mx-auto sm:mx-0`;
-const Input = tw.input`bg-gray-300 px-6 py-3 rounded sm:rounded-r-none border-2 sm:border-r-0 border-gray-400 hover:border-primary-500 focus:outline-none transition duration-300 w-full`;
-const SubscribeButton = tw(
-  PrimaryButtonBase
-)`mt-4 sm:mt-0 w-full sm:w-auto rounded sm:rounded-l-none px-8 py-3`;
+const ContactContainer = tw.div`max-w-sm mx-auto lg:mx-0`;
+const ContactText = tw.p`mt-2 lg:mt-6 text-sm font-medium text-gray-600`;
+const ContactDetails = tw.div`mt-4 lg:mt-6 text-sm`;
+const Detail = tw.p`mb-2`;
 
 const Divider = tw.div`my-16 border-b-2 border-gray-300 w-full`;
 
@@ -76,19 +73,20 @@ export default ({ background }) => {
             </LinkList>
           </Column>
 
-          <SubscribeNewsletterColumn>
-            <SubscribeNewsletterContainer>
-              <ColumnHeading>Subscribe to our Newsletter</ColumnHeading>
-              <SubscribeText>
-                We deliver high quality blog posts written by professionals
-                weekly. And we promise no spam.
-              </SubscribeText>
-              <SubscribeForm method="get" action="#">
-                <Input type="email" placeholder="Your Email Address" />
-                <SubscribeButton type="submit">Subscribe</SubscribeButton>
-              </SubscribeForm>
-            </SubscribeNewsletterContainer>
-          </SubscribeNewsletterColumn>
+          <ContactColumn>
+            <ContactContainer>
+              <ColumnHeading>Contact Us</ColumnHeading>
+              <ContactText>
+                We'd love to hear from you! Reach out to us via the following
+                channels:
+              </ContactText>
+              <ContactDetails>
+                <Detail>Email: support@trendera.com</Detail>
+                <Detail>Phone: +123-456-7890</Detail>
+                <Detail>Address: 123 Trend Era Blvd, Fashion City</Detail>
+              </ContactDetails>
+            </ContactContainer>
+          </ContactColumn>
         </SixColumns>
         <Divider />
         <ThreeColRow>

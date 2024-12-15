@@ -49,52 +49,61 @@ export const OrderProvider = ({ children }) => {
     }
   };
 
-  // Buat fungsi create order disni
-  const createOrder = async () => {
-    const url = `http://localhost:3001/api/orders`;
-    const config = {
-      headers: {
-        Authorization: `Bearer ${user?.token || localUser?.token}`, // Pastikan menggunakan "Bearer" jika diperlukan
-        "Content-Type": "application/json", // Header tambahan untuk format JSON
-      },
-    };
-    const body = {
-      ...formData, // Mengirim data form yang telah diisi
-    };
-    console.log("body",body)
-    console.log("formdata",formData)
-    console.log("Creating order...");
-  
-    try {
-      setLoading(true);
-      const response = await axios.post(url, body, config);
-      console.log("Order created successfully:", response.data.data);
-  
-      // Notifikasi sukses
-      toast.success(response.data.message);
-  
-      // Update state untuk daftar pesanan
-      setOrders((prevOrders) => [...prevOrders, response.data.data]);
-  
-      // Reset form data setelah berhasil
-      setFormData({
-        address: "",
-        city: "",
-        postalCode: "",
-        country: "",
-        status: "",
-        items: [],
-      });
-      setLoading(false);
-    } catch (error) {
-      // Menangkap error dan memberikan informasi
-      if (error.response) {
-        console.error("Error Response:", error.response.data);
-        toast.error(error.response.data.message || "Failed to create order.");
-        setLoading(false);
-      } 
-    }
+  // Fungsi untuk membuat order
+const createOrder = async () => {
+  const url = `http://localhost:3001/api/orders`;
+  const config = {
+    headers: {
+      Authorization: `Bearer ${user?.token || localUser?.token}`, // Pastikan menggunakan "Bearer" jika diperlukan
+      "Content-Type": "application/json", // Header tambahan untuk format JSON
+    },
   };
+
+  const body = {
+    ...formData, // Mengirim data form yang telah diisi
+  };
+
+  console.log("body", body);
+  console.log("formdata", formData);
+  console.log("Creating order...");
+
+  try {
+    setLoading(true); // Mengaktifkan indikator loading
+
+    // Mengirim permintaan POST untuk membuat order
+    const response = await axios.post(url, body, config);
+
+    console.log("Order created successfully:", response.data.data);
+
+    // Notifikasi sukses
+    toast.success(response.data.message);
+
+    // Update state untuk daftar pesanan
+    setOrders((prevOrders) => [...prevOrders, response.data.data]);
+
+    // Reset form data setelah berhasil
+    setFormData({
+      address: "",
+      city: "",
+      postalCode: "",
+      country: "",
+      status: "",
+      items: [],
+    });
+  } catch (error) {
+    // Menangkap error dan memberikan informasi
+    if (error.response) {
+      console.error("Error Response:", error.response.data);
+      toast.error(error.response.data.message || "Failed to create order.");
+    } else {
+      console.error("Unexpected Error:", error);
+      toast.error("An unexpected error occurred. Please try again later.");
+    }
+  } finally {
+    setLoading(false); // Memastikan indikator loading dimatikan
+  }
+};
+
   
   return (
     <OrdersContext.Provider
