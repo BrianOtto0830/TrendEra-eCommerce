@@ -34,7 +34,7 @@ export const OrderProvider = ({ children }) => {
     try {
       // Your code here
       const response = await axios.get(
-        `http://localhost:3001/api/orders`,
+        `${process.env.REACT_APP_API_URL}/api/orders`,
         {
           headers: {
             Authorization: `Bearer ${user?.token || localUser?.token}`,
@@ -51,7 +51,7 @@ export const OrderProvider = ({ children }) => {
 
   // Fungsi untuk membuat order
 const createOrder = async () => {
-  const url = `http://localhost:3001/api/orders`;
+  const url = `${process.env.REACT_APP_API_URL}/api/orders`;
   const config = {
     headers: {
       Authorization: `Bearer ${user?.token || localUser?.token}`, // Pastikan menggunakan "Bearer" jika diperlukan
