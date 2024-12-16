@@ -42,7 +42,7 @@ const Filters = () => {
 
   const getCategories = async () => {
     try{
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/categories`,
+      const response = await axios.get(process.env.REACT_APP_API_URL+`/api/categories`,
         {
           headers: {
             Authorization: `${user.token}`,
