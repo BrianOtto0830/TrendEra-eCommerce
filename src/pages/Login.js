@@ -1,7 +1,9 @@
 import React from "react";
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import illustration from "images/login-illustration.svg";
+import illustrationLogin from "images/auth-login.svg";
 import logo from "images/logo.svg";
+import logoTrendEra from "images/TrendEraLogo.png";
 import googleIconImageSrc from "images/google-icon.png";
 import twitterIconImageSrc from "images/twitter-icon.png";
 import { ReactComponent as LoginIcon } from "feather-icons/dist/icons/log-in.svg";
@@ -51,7 +53,7 @@ const LoginPage = () => {
           {/* Bagian Kiri: Form Login */}
           <div className="w-full md:w-1/2 px-8 py-12">
             <div className="text-center mb-10">
-              <img src={logo} alt="Trend Era Logo" className="mx-auto h-12" />
+              <img src={logoTrendEra} alt="Trend Era Logo" className="mx-auto h-12" />
               <h2 className="text-2xl font-semibold text-gray-800 mt-4">
                 Welcome Back!
               </h2>
@@ -86,6 +88,7 @@ const LoginPage = () => {
                 <button
                   type="submit"
                   className="w-full py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-700 transition-all duration-300"
+                  style={{ backgroundColor: "#0D9488" }}
                 >
                   Sign In
                 </button>
@@ -109,7 +112,7 @@ const LoginPage = () => {
           {/* Bagian Kanan: Ilustrasi */}
           <div
             className="hidden md:block w-1/2 bg-cover bg-center"
-            style={{ backgroundImage: `url("${illustrationImageSrc}")` }}
+            style={{ backgroundImage: `url("${illustrationLogin}")` }}
           />
         </div>
       </div>

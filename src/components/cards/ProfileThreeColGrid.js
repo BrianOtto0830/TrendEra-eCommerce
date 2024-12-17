@@ -50,9 +50,9 @@ export default ({
   description = "Our team at Trend Era is made up of passionate fashion experts, creative minds, and dedicated professionals who work together to bring you the latest styles and the best shopping experience.",
   cards = [
     {
-      imageSrc: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=2.95&w=512&h=512&q=80",
+      imageSrc: "https://i.pinimg.com/736x/4d/70/ba/4d70baea85c8f2ae4a5bc8f67669230f.jpg",
       position: "Founder",
-      name: "Adam Cuppy",
+      name: "Brian Otto",
       links: [
         {
           url: "https://twitter.com",
@@ -69,9 +69,9 @@ export default ({
       ],
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=2.95&w=512&h=512&q=80",
+      imageSrc: "https://i.pinimg.com/736x/03/58/16/035816652e01a9686fae900e697d36f0.jpg",
       position: "Sr. Designer",
-      name: "Charlotte Hale",
+      name: "Christina Mckay",
       links: [
         {
           url: "https://twitter.com",
@@ -88,9 +88,9 @@ export default ({
       ],
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=2.95&w=512&h=512&q=80",
+      imageSrc: "https://i.pinimg.com/736x/9f/09/cd/9f09cddcba0b456474f678471a746fc2.jpg",
       position: "Jr. Designer",
-      name: "Silvester Wize",
+      name: "Jhonatan Mark",
       links: [
         {
           url: "https://twitter.com",
@@ -107,9 +107,9 @@ export default ({
       ],
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=2.95&w=512&h=512&q=80",
+      imageSrc: "https://i.pinimg.com/736x/a8/3e/91/a83e91998c5d14ad882a22b280760ab8.jpg",
       position: "Lead Developer",
-      name: "Himali Turn",
+      name: "Kevin jones",
       links: [
         {
           url: "https://twitter.com",
@@ -126,9 +126,9 @@ export default ({
       ],
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1546820389-44d77e1f3b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=3.45&w=512&h=512&q=80",
+      imageSrc: "https://i.pinimg.com/736x/78/62/f7/7862f73b81c10a44ab0b8915d229d75d.jpg",
       position: "Sr. Developer",
-      name: "Troye Sivan",
+      name: "Kim jo",
       links: [
         {
           url: "https://twitter.com",
@@ -145,9 +145,9 @@ export default ({
       ],
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=3.45&w=512&h=512&q=80",
+      imageSrc: "https://i.pinimg.com/736x/f5/22/1f/f5221ff484810110cd52e2197cfa8806.jpg",
       position: "Quality Assurance",
-      name: "Holo Wo",
+      name: "Selia Wolfe",
       links: [
         {
           url: "https://twitter.com",
