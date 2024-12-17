@@ -117,6 +117,7 @@ const LoginPage = () => {
                   <a
                     href={signupUrl}
                     className="border-b border-gray-900 border-dotted"
+                    style={{ color: "black" }}
                   >
                     Sign Up
                   </a>
