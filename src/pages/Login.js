@@ -6,6 +6,7 @@ import googleIconImageSrc from "images/google-icon.png";
 import twitterIconImageSrc from "images/twitter-icon.png";
 import { ReactComponent as LoginIcon } from "feather-icons/dist/icons/log-in.svg";
 import { useAuth } from "context/AuthProvider";
+import { color } from "framer-motion";
 
 const LoginPage = () => {
   const { login, form, setForm } = useAuth();
@@ -100,7 +101,7 @@ const LoginPage = () => {
                     type="submit"
                     className="mt-5 tracking-wide font-semibold bg-primary-500 text-gray-100 w-full py-4 rounded-lg hover:bg-primary-900 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
                   >
-                    <LoginIcon className="icon" />
+                    <LoginIcon className="icon" style= {{ color: "black"}}/>
                     <span className="text">{submitButtonText}</span>
                   </button>
                 </form>
