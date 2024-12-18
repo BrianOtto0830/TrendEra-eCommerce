@@ -13,7 +13,8 @@ export const ProductsProvider = ({ children }) => {
       //   'https://65cc9d71dd519126b83f161f.mockapi.io/api/v1/products'
       // );
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/product`
+        `${process.env.REACT_APP_API_URL}/api/product`,
+        { withCredentials: true }
       );
 
       // Memotong array hasil response menjadi 14 data
