@@ -39,7 +39,6 @@ export const OrderProvider = ({ children }) => {
           headers: {
             Authorization: `Bearer ${user?.token || localUser?.token}`,
           },
-          withCredentials: true,
         }
       );
       console.log("response ordercontext", response.data);
@@ -58,7 +57,6 @@ const createOrder = async () => {
       Authorization: `Bearer ${user?.token || localUser?.token}`, // Pastikan menggunakan "Bearer" jika diperlukan
       "Content-Type": "application/json", // Header tambahan untuk format JSON
     },
-    withCredentials: true,
   };
 
   const body = {

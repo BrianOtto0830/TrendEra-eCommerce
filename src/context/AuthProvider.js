@@ -32,7 +32,6 @@ export const AuthProvider = ({ children }) => {
         // `http://localhost:3001/api/auth/customer`,
         `${process.env.REACT_APP_API_URL}/api/auth/customer`,
         dataUser,
-        { withCredentials: true }
       );
 
       const user = response.data;

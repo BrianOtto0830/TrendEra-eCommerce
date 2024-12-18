@@ -14,7 +14,6 @@ export const ProductsProvider = ({ children }) => {
       // );
       const response = await axios.get(
         `${process.env.REACT_APP_API_URL}/api/product`,
-        { withCredentials: true }
       );
 
       // Memotong array hasil response menjadi 14 data
@@ -32,7 +31,6 @@ export const ProductsProvider = ({ children }) => {
       setLoading(true);
       const response = await axios.get(
         `${process.env.REACT_APP_API_URL}/api/product/${id}`,
-        { withCredentials: true }
       );
       // Memotong array hasil response menjadi 14 data
       setProduct(response.data.data);
