@@ -47,6 +47,7 @@ const Filters = () => {
           headers: {
             Authorization: `${user.token}`,
           },
+          withCredentials: true
         }
         
       );
