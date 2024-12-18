@@ -10,21 +10,28 @@ import Filters from "components/Filters";
 export const Products = () => {
   const Container = tw.div`relative bg-gray-200 text-gray-700 -mb-8 -mx-8 px-4 py-8 lg:py-12`;
   const Content = tw.div`max-w-screen-xl mx-auto relative z-10`;
+  const Main = tw.main`flex flex-col md:flex-row md:gap-8`;
+  const FiltersContainer = tw.div`w-full md:w-1/4 mb-6 md:mb-0`;
+  const ProductContainer = tw.div`w-full md:w-3/4`;
+
   return (
     <AnimationRevealPage>
       <Header className="mb-8" />
 
       <Container>
         <Content>
-          <main>
-            <div className="section-center products pb-[90px] flex ">
+          <Main>
+            {/* Filters Section */}
+            <FiltersContainer>
               <Filters />
-              <div className="">
-                <Sort />
-                <ProductList />
-              </div>
-            </div>
-          </main>
+            </FiltersContainer>
+
+            {/* Product List and Sort */}
+            <ProductContainer>
+              <Sort />
+              <ProductList />
+            </ProductContainer>
+          </Main>
         </Content>
       </Container>
 

@@ -1,123 +1,157 @@
 /* ListView Container */
 .list-view {
-    padding: 1rem;
-  }
-  
-  /* Product Article */
-  .list-view article {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
-  }
-  
-  .list-view article:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transform: translateY(-5px);
-  }
-  
-  /* Product Image */
-  .list-view article img {
-    width: 300px;
-    height: 200px;
-    border-radius: 12px;
-    /* ubah kode ini untuk tampilan gambarnya */
-    object-fit: contain; 
-    flex-shrink: 0;
-  }
-  
-  /* Product Details */
-  .list-view article div {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 0.5rem;
-  }
-  
-  /* Product Title */
-  .list-view article p.text-2xl {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #102a42;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Product Price */
-  .list-view article p.text-[#b99179] {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #b99179;
-    margin-bottom: 1rem;
-  }
-  
-  /* Product Description */
-  .list-view article p.mt-2 {
-    font-size: 0.875rem;
-    line-height: 1.5;
-    color: #4a4a4a;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limit to 3 lines */
-    -webkit-box-orient: vertical;
-  }
-  
-  /* Details Button */
-  .list-view article a {
-    align-self: start;
-    background-color: #102a42;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 0.875rem;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .list-view article a:hover {
-    background-color: #065a82;
-    transform: scale(1.05);
-  }
-  
-  /* Pagination */
-  .list-view > .flex {
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .list-view button {
-    font-size: 0.875rem;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    color: #fff;
-    background-color: #676767;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .list-view button:hover {
-    background-color: #4a4a4a;
-  }
-  
-  .list-view button:disabled {
-    background-color: #d6d6d6;
-    cursor: not-allowed;
-  }
-  
+  padding: 1rem;
+}
 
-/* img {
-    height: 175px;
-    width: 100%;
-    display: block;
-    object-fit: cover;
-    border-radius: var(--radius);
-    transition: var(--transition);
-} */
+/* Product Article */
+.list-view article {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.list-view article:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Product Image */
+.list-view article img {
+  width: 300px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: contain; 
+  flex-shrink: 0;
+}
+
+/* Product Details */
+.list-view article div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+/* Product Title */
+.list-view article p.text-2xl {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #102a42;
+  margin-bottom: 0.5rem;
+}
+
+/* Product Price */
+.list-view article p.text-[#b99179] {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #b99179;
+  margin-bottom: 1rem;
+}
+
+/* Product Description */
+.list-view article p.mt-2 {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #4a4a4a;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+/* Details Button */
+.list-view article a {
+  align-self: start;
+  background-color: #102a42;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.list-view article a:hover {
+  background-color: #065a82;
+  transform: scale(1.05);
+}
+
+/* Pagination */
+.list-view > .flex {
+  justify-content: center;
+  gap: 1rem;
+}
+
+.list-view button {
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: #676767;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.list-view button:hover {
+  background-color: #4a4a4a;
+}
+
+.list-view button:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .list-view article {
+    flex-direction: column; /* Stack image and details */
+    align-items: center;
+    text-align: center;
+  }
+
+  .list-view article img {
+    width: 100%; /* Full width image for small screens */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .list-view article div {
+    gap: 1rem; /* Increase spacing between elements */
+  }
+
+  .list-view article a {
+    align-self: center; /* Center align the button */
+  }
+}
+
+@media (max-width: 480px) {
+  .list-view article {
+    padding: 1rem; /* Reduce padding for very small screens */
+  }
+
+  .list-view article p.text-2xl {
+    font-size: 1.25rem; /* Adjust title size */
+  }
+
+  .list-view article p.text-[#b99179] {
+    font-size: 1rem; /* Adjust price size */
+  }
+
+  .list-view article p.mt-2 {
+    font-size: 0.75rem; /* Adjust description size */
+  }
+
+  .list-view article a {
+    font-size: 0.75rem; /* Adjust button size */
+    padding: 0.4rem 0.8rem; /* Reduce padding */
+  }
+}
