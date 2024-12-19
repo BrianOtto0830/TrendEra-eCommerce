@@ -65,6 +65,14 @@ const DetailProduct = () => {
       toast.error('Sorry, product is unavailable.');
       return;
     }
+
+    // Validasi jika produk memiliki variasi gambar
+    if (selectedItem.images.length > 0 && !selectedImage) {
+      toast.error('Please select an image.');
+      return;
+    }
+  
+
   
     // Validasi jika produk memiliki variasi warna
     if (selectedItem.colors.length > 0 && !selectedColor) {
