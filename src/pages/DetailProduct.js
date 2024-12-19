@@ -72,8 +72,6 @@ const DetailProduct = () => {
       return;
     }
   
-
-  
     // Validasi jika produk memiliki variasi warna
     if (selectedItem.colors.length > 0 && !selectedColor) {
       toast.error('Please select a color.');
