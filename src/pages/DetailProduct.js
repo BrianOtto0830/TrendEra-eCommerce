@@ -68,7 +68,7 @@ const DetailProduct = () => {
 
     // Validasi jika produk memiliki variasi gambar
     if (selectedItem.images.length > 0 && !selectedImage) {
-      toast.error('Please select an image.');
+      toast.error('Please choose a picture that matches the color you want.');
       return;
     }
   

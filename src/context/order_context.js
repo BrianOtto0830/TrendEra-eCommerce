@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useCart } from "react-use-cart";
 import { AuthProvider, useAuth } from "./AuthProvider";
 import { set } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const OrdersContext = React.createContext();
 
@@ -76,7 +77,11 @@ const createOrder = async () => {
     console.log("Order created successfully:", response.data.data);
 
     // Notifikasi sukses
-    toast.success(response.data.message);
+    Swal.fire({
+      title: "Order Created Successfully!",
+      icon: "success",
+      confirmButtonText: "OK",
+    });
 
     // Update state untuk daftar pesanan
     setOrders((prevOrders) => [...prevOrders, response.data.data]);
