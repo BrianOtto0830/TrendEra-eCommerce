@@ -84,6 +84,9 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
 export default ({ heading = 'Checkout our Products' }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  //tambahan untuk memilih warna dan gambar product
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [tabsKeys, setTabsKeys] = useState([
     'Best Sellers',
