@@ -9,7 +9,7 @@ import { PrimaryButton as PrimaryButtonBase } from 'components/misc/Buttons.js';
 import { ReactComponent as SvgDecoratorBlob1 } from 'images/svg-decorator-blob-5.svg';
 import { ReactComponent as SvgDecoratorBlob2 } from 'images/svg-decorator-blob-7.svg';
 import { useCart } from 'react-use-cart';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useProductsContext } from 'context/product_context';
@@ -87,6 +87,7 @@ export default ({ heading = 'Checkout our Products' }) => {
   //tambahan untuk memilih warna dan gambar product
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
+  const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
   const [tabsKeys, setTabsKeys] = useState([
     'Best Sellers',
@@ -216,7 +217,7 @@ export default ({ heading = 'Checkout our Products' }) => {
                     />
                   </Link>
                   {/* <CardButton onClick={() => openModal(card)}> */}
-                  <CardButton onClick={() => Navigate(`/detail-product/${card.id}`)}>
+                  <CardButton onClick={() => navigate(`/detail-product/${card.id}`)}>
                     Buy Now
                   </CardButton>
                 </Card>
