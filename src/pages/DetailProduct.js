@@ -178,8 +178,8 @@ const DetailProduct = () => {
   useEffect(() => {
     const updatedPrice = handleChangePrice();
     setProduct((prevProduct) => ({ ...prevProduct, updatedPrice }));
-  }, [quantity, product?.price, handleChangePrice, setProduct]);
-  //[quantity, product?.price]
+  }, [quantity, product?.price]);
+  // [quantity, product?.price, handleChangePrice, setProduct]
   
 //pada useEffect diatas saya menambahkan handleChangePrice dan setProduct jika ingin menghilangkan warning
   return (
