@@ -18,6 +18,7 @@ import { useOrderContext } from "context/order_context";
 const Checkout = () => {
   const { handleSubmit } = useForm();
   const { items, emptyCart } = useCart();
+  const redirect = useNavigate();
 
   // Todo
   // Panggil state dan juga fungsi createOrder dari ordercontext
@@ -38,7 +39,7 @@ const Checkout = () => {
     
     const response = await createOrder();
     emptyCart();
-    
+    redirect("/orders");
     // console.log("response", response.data.data);
     // toast.success(response.data.data.message);
   };
