@@ -53,11 +53,10 @@ export default ({ roundedHeaderButton }) => {
         <TwoColumn>
           <LeftColumn>
             <Heading>
-              Beautiful React Templates <span tw="text-primary-500">for you.</span>
+              TrendEra <span tw="text-primary-500">for you.</span>
             </Heading>
             <Paragraph>
-              Our templates are easy to setup, understand and customize. Fully modular components with a variety of
-              pages and components.
+              TrendEra is a platform that provides a wide range of products and services for individuals and businesses.
             </Paragraph>
             <Actions>
               <input type="text" placeholder="Your E-mail Address" />
